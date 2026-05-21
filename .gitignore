@@ -1,0 +1,29 @@
+# Virtual Environment
+.venv/
+venv/
+
+# Environment Secrets
+.env
+
+# Logs
+logs/
+*.log
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VS Code
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Upload temp files (optional)
+uploads/
+
+# Alembic cache (optional)
+*.sqlite3

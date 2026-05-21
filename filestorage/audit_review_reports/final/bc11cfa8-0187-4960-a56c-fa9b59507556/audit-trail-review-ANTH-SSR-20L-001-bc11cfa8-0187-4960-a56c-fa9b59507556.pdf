@@ -1,0 +1,3867 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 13 0 R /MediaBox [ 0 0 612 792 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/Contents 14 0 R /MediaBox [ 0 0 612 792 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/Contents 15 0 R /MediaBox [ 0 0 612 792 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+7 0 obj
+<<
+/Contents 16 0 R /MediaBox [ 0 0 612 792 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+8 0 obj
+<<
+/Contents 17 0 R /MediaBox [ 0 0 612 792 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+9 0 obj
+<<
+/Contents 18 0 R /MediaBox [ 0 0 612 792 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+10 0 obj
+<<
+/PageMode /UseNone /Pages 12 0 R /Type /Catalog
+>>
+endobj
+11 0 obj
+<<
+/Author (ValidateNow / Compliance Manager) /CreationDate (D:20260520023610+05'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260520023610+05'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (Veeva Audit Trail Periodic Review Report) /Trapped /False
+>>
+endobj
+12 0 obj
+<<
+/Count 6 /Kids [ 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R ] /Type /Pages
+>>
+endobj
+13 0 obj
+<<
+/Length 7770
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 8 Tf 9.6 TL ET
+.35 .38 .44 rg
+BT 1 0 0 1 39.6 30.24 Tm (Confidential / Controlled Document) Tj T* ET
+BT 1 0 0 1 245.076 30.24 Tm (Generated 2026-05-19T21:06:09Z) Tj T* ET
+BT 1 0 0 1 547.048 30.24 Tm (Page 1) Tj T* ET
+Q
+q
+1 0 0 1 45.6 735.4 cm
+q
+.498039 .113725 .113725 rg
+BT 1 0 0 1 0 2 Tm /F2 9 Tf 11 TL 184.8945 0 Td (Confidential / Controlled Document) Tj T* -184.8945 0 Td ET
+Q
+Q
+q
+1 0 0 1 45.6 723.4 cm
+q
+.278431 .333333 .411765 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (ValidateNow / Compliance Manager) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 699.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 5 Tm /F2 19 Tf 24 TL 74.561 0 Td (Veeva Audit Trail Periodic Review Report) Tj T* -74.561 0 Td ET
+Q
+Q
+q
+1 0 0 1 45.6 681.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 232.615 0 Td (APPROVED) Tj T* -232.615 0 Td ET
+Q
+Q
+q
+1 0 0 1 45.6 673.4 cm
+Q
+q
+1 0 0 1 45.6 633.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 40 468 -20 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Report ID) Tj T* ET
+Q
+Q
+q
+1 0 0 1 182.4 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Generated date) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Report version) Tj T* ET
+Q
+Q
+q
+1 0 0 1 394.8 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Review Type) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (bc11cfa8-0187-4960-a56c-fa9b59507556) Tj T* ET
+Q
+Q
+q
+1 0 0 1 182.4 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (2026-05-19T20:30:36Z) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1.0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 394.8 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (ADHOC) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 40 m 468 40 l S
+n 0 0 m 468 0 l S
+n 0 0 m 0 40 l S
+n 468 0 m 468 40 l S
+n 0 20 m 468 20 l S
+n 176.4 0 m 176.4 40 l S
+n 309.6 0 m 309.6 40 l S
+n 388.8 0 m 388.8 40 l S
+Q
+Q
+Q
+q
+1 0 0 1 45.6 603.4 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 13 Tf 16 TL (1. Executive Summary) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 545.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 43 Tm /F1 9 Tf 13 TL (This audit trail review was performed for Veeva Vault PromoMats covering the period 2026-04-30T18:30:00Z to) Tj T* (2026-05-19T18:29:00Z. A total of 200 audit trail records were reviewed. The system identified 24 findings: 0 critical, 0 high, 0) Tj T* (medium, and 24 low. The calculated compliance score is 90/100 with a rating of Compliant. Based on the configured scoring rules,) Tj T* (this review is classified as Compliant.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 229.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 310 496.8 -20 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 295 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Field) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 295 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Value) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 275 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Review type) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 275 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (ADHOC) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 255 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Trigger source) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 255 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (MANUAL_USER) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 235 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Asset/system) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 235 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Veeva Vault PromoMats) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 215 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Review period) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 215 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (2026-04-30T18:30:00Z to 2026-05-19T18:29:00Z) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 195 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Total records reviewed) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 195 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (200) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 175 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Total findings) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 175 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (24) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 155 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Critical findings) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 155 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (High findings) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 115 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Medium findings) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 115 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 95 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Low findings) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 95 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (24) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 75 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Compliance Score) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 75 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (90 / 100) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 55 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Rating) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 55 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Compliant) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 35 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Risk Level) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 35 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Low) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Overall conclusion) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (The review identified findings requiring QA review. The calculated score is 90/100 and the) Tj T* (review is classified as Compliant.) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 310 m 496.8 310 l S
+n 0 0 m 496.8 0 l S
+n 0 0 m 0 310 l S
+n 496.8 0 m 496.8 310 l S
+n 0 290 m 496.8 290 l S
+n 0 270 m 496.8 270 l S
+n 0 250 m 496.8 250 l S
+n 0 230 m 496.8 230 l S
+n 0 210 m 496.8 210 l S
+n 0 190 m 496.8 190 l S
+n 0 170 m 496.8 170 l S
+n 0 150 m 496.8 150 l S
+n 0 130 m 496.8 130 l S
+n 0 110 m 496.8 110 l S
+n 0 90 m 496.8 90 l S
+n 0 70 m 496.8 70 l S
+n 0 50 m 496.8 50 l S
+n 0 30 m 496.8 30 l S
+n 151.2 0 m 151.2 310 l S
+Q
+Q
+Q
+q
+1 0 0 1 45.6 199.4 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 13 Tf 16 TL (2. Asset / System Information) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 73.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 120 496.8 -20 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Field) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Value) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Asset name) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Veeva Vault PromoMats) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Asset ID/code) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (ANTH-SSR-20L-001) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Asset UUID) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (c1596605-c745-42cc-9563-cae3e0b2e54b) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Veeva instance) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Veeva Quality Vault) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Veeva app) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (QualityDocs) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 120 m 496.8 120 l S
+n 0 0 m 0 120 l S
+n 496.8 0 m 496.8 120 l S
+n 0 0 m 496.8 0 l S
+n 0 100 m 496.8 100 l S
+n 0 80 m 496.8 80 l S
+n 0 60 m 496.8 60 l S
+n 0 40 m 496.8 40 l S
+n 0 20 m 496.8 20 l S
+n 151.2 0 m 151.2 120 l S
+Q
+Q
+Q
+ 
+endstream
+endobj
+14 0 obj
+<<
+/Length 8337
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 8 Tf 9.6 TL ET
+.35 .38 .44 rg
+BT 1 0 0 1 39.6 30.24 Tm (Confidential / Controlled Document) Tj T* ET
+BT 1 0 0 1 245.076 30.24 Tm (Generated 2026-05-19T21:06:09Z) Tj T* ET
+BT 1 0 0 1 547.048 30.24 Tm (Page 2) Tj T* ET
+Q
+q
+1 0 0 1 45.6 706.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 40 496.8 -20 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Field) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Value) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Audit trail type) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (login_audit_trail) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 40 m 496.8 40 l S
+n 0 20 m 0 40 l S
+n 0 0 m 0 20 l S
+n 496.8 20 m 496.8 40 l S
+n 496.8 0 m 496.8 20 l S
+n 0 0 m 496.8 0 l S
+n 0 20 m 496.8 20 l S
+n 151.2 20 m 151.2 40 l S
+n 151.2 0 m 151.2 20 l S
+Q
+Q
+Q
+q
+1 0 0 1 45.6 676.4 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 13 Tf 16 TL (3. Review Scope) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 440.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 230 496.8 -20 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 215 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Field) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 215 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Value) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 195 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Manual or scheduled) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 195 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (ADHOC) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 175 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Schedule ID) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 175 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A - manual review) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 155 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Schedule name) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 155 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A - manual review) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Schedule run ID) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A - manual review) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 115 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Review period) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 115 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (2026-04-30T18:30:00Z to 2026-05-19T18:29:00Z) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 95 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Selected audit trail types) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 95 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (login_audit_trail) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 75 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Review scope) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 75 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOGIN_ONLY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 55 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Timezone/business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 55 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Asia/Kolkata; 09:00 to 18:00) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 35 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Review job ID) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 35 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (b3f458c6-121a-40f7-b24d-5e78af69577c) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Review candidate key) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (c1596605-c745-42cc-9563-cae3e0b2e54b:login_audit_trail:2026-04-30T18:30:00Z:2026-05-1) Tj T* (9T18:29:00Z) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 230 m 496.8 230 l S
+n 0 0 m 496.8 0 l S
+n 0 0 m 0 230 l S
+n 496.8 0 m 496.8 230 l S
+n 0 210 m 496.8 210 l S
+n 0 190 m 496.8 190 l S
+n 0 170 m 496.8 170 l S
+n 0 150 m 496.8 150 l S
+n 0 130 m 496.8 130 l S
+n 0 110 m 496.8 110 l S
+n 0 90 m 496.8 90 l S
+n 0 70 m 496.8 70 l S
+n 0 50 m 496.8 50 l S
+n 0 30 m 496.8 30 l S
+n 151.2 0 m 151.2 230 l S
+Q
+Q
+Q
+q
+1 0 0 1 45.6 410.4 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 13 Tf 16 TL (4. Audit Trail Analysis Summary) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 264.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 140 496.8 -20 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 125 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Field) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 125 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Value) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Total records reviewed) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (200) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Extraction status) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (EXTRACTED) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Extracted at) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (2026-05-19T20:30:20Z) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Failed audit trail types) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Successful audit trail types) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (login_audit_trail) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Normalization error count) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 140 m 496.8 140 l S
+n 0 0 m 496.8 0 l S
+n 0 0 m 0 140 l S
+n 496.8 0 m 496.8 140 l S
+n 0 120 m 496.8 120 l S
+n 0 100 m 496.8 100 l S
+n 0 80 m 496.8 80 l S
+n 0 60 m 496.8 60 l S
+n 0 40 m 496.8 40 l S
+n 0 20 m 496.8 20 l S
+n 151.2 0 m 151.2 140 l S
+Q
+Q
+Q
+q
+1 0 0 1 45.6 258.4 cm
+Q
+q
+1 0 0 1 45.6 218.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 40 439.2 -20 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Audit Trail Type) Tj T* ET
+Q
+Q
+q
+1 0 0 1 236.4 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Status) Tj T* ET
+Q
+Q
+q
+1 0 0 1 366 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Records) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (login_audit_trail) Tj T* ET
+Q
+Q
+q
+1 0 0 1 236.4 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (EXTRACTED) Tj T* ET
+Q
+Q
+q
+1 0 0 1 366 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (200) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 40 m 439.2 40 l S
+n 0 0 m 439.2 0 l S
+n 0 0 m 0 40 l S
+n 439.2 0 m 439.2 40 l S
+n 0 20 m 439.2 20 l S
+n 230.4 0 m 230.4 40 l S
+n 360 0 m 360 40 l S
+Q
+Q
+Q
+q
+1 0 0 1 45.6 188.4 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 13 Tf 16 TL (5. Compliance Score / Checklist Summary) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 62.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 120 496.8 -20 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Field) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Value) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Compliance Score) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (90 / 100) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Rating) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Compliant) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Risk Level) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Low) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Scoring Basis) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (10-point deterministic audit trail checklist) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Total Penalty Applied) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (10) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 120 m 496.8 120 l S
+n 0 0 m 0 120 l S
+n 496.8 0 m 496.8 120 l S
+n 0 0 m 496.8 0 l S
+n 0 100 m 496.8 100 l S
+n 0 80 m 496.8 80 l S
+n 0 60 m 496.8 60 l S
+n 0 40 m 496.8 40 l S
+n 0 20 m 496.8 20 l S
+n 151.2 0 m 151.2 120 l S
+Q
+Q
+Q
+ 
+endstream
+endobj
+15 0 obj
+<<
+/Length 11164
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 8 Tf 9.6 TL ET
+.35 .38 .44 rg
+BT 1 0 0 1 39.6 30.24 Tm (Confidential / Controlled Document) Tj T* ET
+BT 1 0 0 1 245.076 30.24 Tm (Generated 2026-05-19T21:06:09Z) Tj T* ET
+BT 1 0 0 1 547.048 30.24 Tm (Page 3) Tj T* ET
+Q
+q
+1 0 0 1 45.6 706.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 40 496.8 -20 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Field) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Value) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Result Meaning) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Configured checks did not identify material compliance risk within the selected scope.) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 40 m 496.8 40 l S
+n 0 20 m 0 40 l S
+n 0 0 m 0 20 l S
+n 496.8 20 m 496.8 40 l S
+n 496.8 0 m 496.8 20 l S
+n 0 0 m 496.8 0 l S
+n 0 20 m 496.8 20 l S
+n 151.2 20 m 151.2 40 l S
+n 151.2 0 m 151.2 20 l S
+Q
+Q
+Q
+q
+1 0 0 1 45.6 700.4 cm
+Q
+q
+1 0 0 1 45.6 310.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 390 478.8 -30 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 375 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Check code) Tj T* ET
+Q
+Q
+q
+1 0 0 1 78 375 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Check name) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.6 375 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Findings) Tj T* ET
+Q
+Q
+q
+1 0 0 1 294 375 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Penalty) Tj T* ET
+Q
+Q
+q
+1 0 0 1 344.4 375 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Status) Tj T* ET
+Q
+Q
+q
+1 0 0 1 423.6 365 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F2 8 Tf 10 TL (Score) Tj T* (impact) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 335 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (MISSING_TIME) Tj T* (STAMP) Tj T* ET
+Q
+Q
+q
+1 0 0 1 78 345 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Timestamp Integrity) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.6 345 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 294 345 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 344.4 345 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (PASS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 423.6 345 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 305 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (MISSING_USE) Tj T* (R_ID) Tj T* ET
+Q
+Q
+q
+1 0 0 1 78 315 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (User Attribution) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.6 315 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 294 315 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 344.4 315 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (PASS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 423.6 315 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 265 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (RECORD_ADDI) Tj T* (TION_TRACEA) Tj T* (BILITY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 78 285 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Record Addition Traceability) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.6 285 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 294 285 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 344.4 275 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (NOT_APPLICABL) Tj T* (E) Tj T* ET
+Q
+Q
+q
+1 0 0 1 423.6 285 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 215 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 32 Tm /F1 8 Tf 10 TL (MODIFICATION) Tj T* (_CAPTURE_OL) Tj T* (D_NEW_VALUE) Tj T* (S) Tj T* ET
+Q
+Q
+q
+1 0 0 1 78 245 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Modification Old/New Value Capture) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.6 245 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 294 245 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 344.4 235 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (NOT_APPLICABL) Tj T* (E) Tj T* ET
+Q
+Q
+q
+1 0 0 1 423.6 245 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 185 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (DELETE_ACTI) Tj T* (ON) Tj T* ET
+Q
+Q
+q
+1 0 0 1 78 195 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Delete Actions) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.6 195 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 294 195 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 344.4 185 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (NOT_APPLICABL) Tj T* (E) Tj T* ET
+Q
+Q
+q
+1 0 0 1 423.6 195 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 155 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (OFF_HOURS_A) Tj T* (CTIVITY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 78 165 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Off-hours Activity) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.6 165 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (24) Tj T* ET
+Q
+Q
+q
+1 0 0 1 294 165 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (10) Tj T* ET
+Q
+Q
+q
+1 0 0 1 344.4 165 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (PARTIAL) Tj T* ET
+Q
+Q
+q
+1 0 0 1 423.6 165 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (-10) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 115 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (PERMISSION_) Tj T* (ACCESS_CHA) Tj T* (NGE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 78 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Permission / Access Changes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.6 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 294 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 344.4 125 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (NOT_APPLICABL) Tj T* (E) Tj T* ET
+Q
+Q
+q
+1 0 0 1 423.6 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 75 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (CONFIGURATI) Tj T* (ON_SYSTEM_C) Tj T* (HANGE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 78 95 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Configuration / System Changes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.6 95 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 294 95 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 344.4 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (NOT_APPLICABL) Tj T* (E) Tj T* ET
+Q
+Q
+q
+1 0 0 1 423.6 95 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (DATA_EXPORT) Tj T* (_LOGGING) Tj T* ET
+Q
+Q
+q
+1 0 0 1 78 55 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Data Export Logging) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.6 55 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 294 55 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 344.4 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (NOT_APPLICABL) Tj T* (E) Tj T* ET
+Q
+Q
+q
+1 0 0 1 423.6 55 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (AUDIT_TRAIL_) Tj T* (COMPLETENE) Tj T* (SS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 78 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Audit Trail Completeness) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 294 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 344.4 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (PASS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 423.6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 390 m 478.8 390 l S
+n 0 0 m 478.8 0 l S
+n 0 0 m 0 390 l S
+n 478.8 0 m 478.8 390 l S
+n 0 360 m 478.8 360 l S
+n 0 330 m 478.8 330 l S
+n 0 300 m 478.8 300 l S
+n 0 260 m 478.8 260 l S
+n 0 210 m 478.8 210 l S
+n 0 180 m 478.8 180 l S
+n 0 150 m 478.8 150 l S
+n 0 110 m 478.8 110 l S
+n 0 70 m 478.8 70 l S
+n 0 40 m 478.8 40 l S
+n 72 0 m 72 390 l S
+n 237.6 0 m 237.6 390 l S
+n 288 0 m 288 390 l S
+n 338.4 0 m 338.4 390 l S
+n 417.6 0 m 417.6 390 l S
+Q
+Q
+Q
+q
+1 0 0 1 45.6 280.4 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 13 Tf 16 TL (6. Findings Summary) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 174.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 100 216 -20 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Severity) Tj T* ET
+Q
+Q
+q
+1 0 0 1 150 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Count) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (CRITICAL) Tj T* ET
+Q
+Q
+q
+1 0 0 1 150 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (HIGH) Tj T* ET
+Q
+Q
+q
+1 0 0 1 150 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (MEDIUM) Tj T* ET
+Q
+Q
+q
+1 0 0 1 150 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 150 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (24) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 100 m 216 100 l S
+n 0 0 m 216 0 l S
+n 0 0 m 0 100 l S
+n 216 0 m 216 100 l S
+n 0 80 m 216 80 l S
+n 0 60 m 216 60 l S
+n 0 40 m 216 40 l S
+n 0 20 m 216 20 l S
+n 144 0 m 144 100 l S
+Q
+Q
+Q
+q
+1 0 0 1 45.6 144.4 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 13 Tf 16 TL (7. Key Findings) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 68.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 70 471.6 -30 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 55 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Finding title) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 55 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Severity) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F2 8 Tf 10 TL (Check) Tj T* (code) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F2 8 Tf 10 TL (Source) Tj T* (records) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F2 8 Tf 10 TL (Score) Tj T* (impact) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 55 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Reviewer comment) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F2 8 Tf 10 TL (Review) Tj T* (status) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 70 m 471.6 70 l S
+n 0 0 m 0 70 l S
+n 471.6 0 m 471.6 70 l S
+n 0 0 m 471.6 0 l S
+n 0 40 m 471.6 40 l S
+n 115.2 0 m 115.2 70 l S
+n 162 0 m 162 70 l S
+n 216 0 m 216 70 l S
+n 262.8 0 m 262.8 70 l S
+n 309.6 0 m 309.6 70 l S
+n 414 0 m 414 70 l S
+Q
+Q
+Q
+ 
+endstream
+endobj
+16 0 obj
+<<
+/Length 12744
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 8 Tf 9.6 TL ET
+.35 .38 .44 rg
+BT 1 0 0 1 39.6 30.24 Tm (Confidential / Controlled Document) Tj T* ET
+BT 1 0 0 1 245.076 30.24 Tm (Generated 2026-05-19T21:06:09Z) Tj T* ET
+BT 1 0 0 1 547.048 30.24 Tm (Page 4) Tj T* ET
+Q
+q
+1 0 0 1 45.6 76.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 670 471.6 -30 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 655 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Finding title) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 655 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Severity) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 645 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F2 8 Tf 10 TL (Check) Tj T* (code) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 645 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F2 8 Tf 10 TL (Source) Tj T* (records) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 645 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F2 8 Tf 10 TL (Score) Tj T* (impact) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 655 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Reviewer comment) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 645 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F2 8 Tf 10 TL (Review) Tj T* (status) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 615 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 625 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 605 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 625 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 625 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 625 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 625 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 575 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 585 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 565 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 585 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 585 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 585 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 585 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 535 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 545 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 525 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 545 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 545 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 545 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 545 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 495 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 505 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 485 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 505 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 505 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 505 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 505 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 455 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 465 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 445 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 465 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 465 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 465 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 465 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 415 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 425 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 405 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 425 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 425 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 425 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 425 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 375 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 385 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 365 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 385 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 385 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 385 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 385 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 335 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 345 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 325 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 345 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 345 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 345 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 345 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 295 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 305 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 285 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 305 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 305 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 305 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 305 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 255 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 265 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 245 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 265 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 265 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 265 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 265 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 215 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 225 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 205 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 225 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 225 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 225 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 225 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 175 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 185 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 165 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 185 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 185 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 185 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 185 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 145 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 125 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 145 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 145 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 145 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 145 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 95 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 55 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 670 m 471.6 670 l S
+n 0 640 m 0 670 l S
+n 0 0 m 0 640 l S
+n 471.6 640 m 471.6 670 l S
+n 471.6 0 m 471.6 640 l S
+n 0 640 m 471.6 640 l S
+n 115.2 640 m 115.2 670 l S
+n 162 640 m 162 670 l S
+n 216 640 m 216 670 l S
+n 262.8 640 m 262.8 670 l S
+n 309.6 640 m 309.6 670 l S
+n 414 640 m 414 670 l S
+n 0 0 m 471.6 0 l S
+n 0 600 m 471.6 600 l S
+n 0 560 m 471.6 560 l S
+n 0 520 m 471.6 520 l S
+n 0 480 m 471.6 480 l S
+n 0 440 m 471.6 440 l S
+n 0 400 m 471.6 400 l S
+n 0 360 m 471.6 360 l S
+n 0 320 m 471.6 320 l S
+n 0 280 m 471.6 280 l S
+n 0 240 m 471.6 240 l S
+n 0 200 m 471.6 200 l S
+n 0 160 m 471.6 160 l S
+n 0 120 m 471.6 120 l S
+n 0 80 m 471.6 80 l S
+n 0 40 m 471.6 40 l S
+n 115.2 0 m 115.2 640 l S
+n 162 0 m 162 640 l S
+n 216 0 m 216 640 l S
+n 262.8 0 m 262.8 640 l S
+n 309.6 0 m 309.6 640 l S
+n 414 0 m 414 640 l S
+Q
+Q
+Q
+ 
+endstream
+endobj
+17 0 obj
+<<
+/Length 9207
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 8 Tf 9.6 TL ET
+.35 .38 .44 rg
+BT 1 0 0 1 39.6 30.24 Tm (Confidential / Controlled Document) Tj T* ET
+BT 1 0 0 1 245.076 30.24 Tm (Generated 2026-05-19T21:06:09Z) Tj T* ET
+BT 1 0 0 1 547.048 30.24 Tm (Page 5) Tj T* ET
+Q
+q
+1 0 0 1 45.6 596.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 150 471.6 -30 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Finding title) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Severity) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 125 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F2 8 Tf 10 TL (Check) Tj T* (code) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 125 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F2 8 Tf 10 TL (Source) Tj T* (records) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 125 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F2 8 Tf 10 TL (Score) Tj T* (impact) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Reviewer comment) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 125 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F2 8 Tf 10 TL (Review) Tj T* (status) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 95 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 55 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 12 Tm /F1 8 Tf 10 TL (Audit activity occurred) Tj T* (outside business hours) Tj T* ET
+Q
+Q
+q
+1 0 0 1 121.2 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (LOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 168 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 22 Tm /F1 8 Tf 10 TL (OFF_HOU) Tj T* (RS_ACTIVI) Tj T* (TY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 222 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 268.8 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 315.6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (N/A) Tj T* ET
+Q
+Q
+q
+1 0 0 1 420 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (OPEN) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 150 m 471.6 150 l S
+n 0 120 m 0 150 l S
+n 0 0 m 0 120 l S
+n 471.6 120 m 471.6 150 l S
+n 471.6 0 m 471.6 120 l S
+n 0 0 m 471.6 0 l S
+n 115.2 120 m 115.2 150 l S
+n 162 120 m 162 150 l S
+n 216 120 m 216 150 l S
+n 262.8 120 m 262.8 150 l S
+n 309.6 120 m 309.6 150 l S
+n 414 120 m 414 150 l S
+n 0 120 m 471.6 120 l S
+n 0 80 m 471.6 80 l S
+n 0 40 m 471.6 40 l S
+n 115.2 0 m 115.2 120 l S
+n 162 0 m 162 120 l S
+n 216 0 m 216 120 l S
+n 262.8 0 m 262.8 120 l S
+n 309.6 0 m 309.6 120 l S
+n 414 0 m 414 120 l S
+Q
+Q
+Q
+q
+1 0 0 1 45.6 566.4 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 13 Tf 16 TL (8. Recommendations and Required Actions) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 550.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (System-generated recommendations) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 538.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (- Review HIGH severity findings before approval.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 526.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (- Verify off-hours activity with business justification.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 514.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (- Confirm permission/access changes were authorized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 509.4 cm
+Q
+q
+1 0 0 1 45.6 499.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (QA required actions) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 487.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (- No additional QA required actions were captured in the report data.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 457.4 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 13 Tf 16 TL (9. QA Review / Approval) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 91.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 360 496.8 -20 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 345 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Field) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 345 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Value) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 325 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Approval status) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 325 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Approved) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 305 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Report workflow status) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 305 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (APPROVED) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 285 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Review type) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 285 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (ADHOC) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 265 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Triggered by) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 265 cm
+q
+BT 1 0 0 1 0 2 Tm 10 TL /F1 8 Tf 0 0 0 rg (Compliance Admin <) Tj (admin@compliancemanager.com) Tj (>) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 245 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Audit review run by) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 245 cm
+q
+BT 1 0 0 1 0 2 Tm 10 TL /F1 8 Tf 0 0 0 rg (Compliance Admin <) Tj (admin@compliancemanager.com) Tj (>) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 225 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Draft generated by) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 225 cm
+q
+BT 1 0 0 1 0 2 Tm 10 TL /F1 8 Tf 0 0 0 rg (Compliance Admin <) Tj (admin@compliancemanager.com) Tj (>) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 205 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Draft generated date) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 205 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (2026-05-19T20:30:36Z) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 185 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Submitted by) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 185 cm
+q
+BT 1 0 0 1 0 2 Tm 10 TL /F1 8 Tf 0 0 0 rg (Yuvaraj <) Tj (yuvarajmyaim@gmail.com) Tj (>) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 165 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Submitted date) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 165 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (2026-05-19T21:05:01Z) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 145 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Submission notes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 145 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Requested changes have been addressed. Please review again.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 125 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Reviewed by) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 125 cm
+q
+BT 1 0 0 1 0 2 Tm 10 TL /F1 8 Tf 0 0 0 rg (yuvi <) Tj (yuviverks@gamil.com) Tj (>) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Reviewed date) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (2026-05-19T21:05:58Z) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Reviewer comments) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (cdvsxb cn v) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Decision by) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 65 cm
+q
+BT 1 0 0 1 0 2 Tm 10 TL /F1 8 Tf 0 0 0 rg (yuvi <) Tj (yuviverks@gamil.com) Tj (>) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Decision date) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (2026-05-19T21:05:58Z) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Decision comments) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (cdvsxb cn v) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Final decision) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Approved) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 360 m 496.8 360 l S
+n 0 0 m 496.8 0 l S
+n 0 0 m 0 360 l S
+n 496.8 0 m 496.8 360 l S
+n 0 340 m 496.8 340 l S
+n 0 320 m 496.8 320 l S
+n 0 300 m 496.8 300 l S
+n 0 280 m 496.8 280 l S
+n 0 260 m 496.8 260 l S
+n 0 240 m 496.8 240 l S
+n 0 220 m 496.8 220 l S
+n 0 200 m 496.8 200 l S
+n 0 180 m 496.8 180 l S
+n 0 160 m 496.8 160 l S
+n 0 140 m 496.8 140 l S
+n 0 120 m 496.8 120 l S
+n 0 100 m 496.8 100 l S
+n 0 80 m 496.8 80 l S
+n 0 60 m 496.8 60 l S
+n 0 40 m 496.8 40 l S
+n 0 20 m 496.8 20 l S
+n 151.2 0 m 151.2 360 l S
+Q
+Q
+Q
+q
+1 0 0 1 45.6 61.4 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 13 Tf 16 TL (10. Electronic Signature) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+18 0 obj
+<<
+/Length 5441
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 8 Tf 9.6 TL ET
+.35 .38 .44 rg
+BT 1 0 0 1 39.6 30.24 Tm (Confidential / Controlled Document) Tj T* ET
+BT 1 0 0 1 245.076 30.24 Tm (Generated 2026-05-19T21:06:09Z) Tj T* ET
+BT 1 0 0 1 547.048 30.24 Tm (Page 6) Tj T* ET
+Q
+q
+1 0 0 1 45.6 526.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 220 496.8 -20 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 205 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Field) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 205 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Value) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 185 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Electronically Signed By) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 185 cm
+q
+BT 1 0 0 1 0 2 Tm 10 TL /F1 8 Tf 0 0 0 rg (yuvi <) Tj (yuviverks@gamil.com) Tj (>) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 165 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (User Email / User ID) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 165 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (yuviverks@gamil.com) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 145 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Role at Time of Signature) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 145 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (QA_VALIDATION_MANAGER) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 125 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Signature Meaning) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 125 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Electronic approval of the audit review report) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Signature Date/Time) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (2026-05-19T21:05:58Z) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Authentication Method) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Authenticated application session) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Decision) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Approved) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Comments) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (cdvsxb cn v) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Report ID) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (bc11cfa8-0187-4960-a56c-fa9b59507556) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Report Version) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1.0) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 220 m 496.8 220 l S
+n 0 0 m 496.8 0 l S
+n 0 0 m 0 220 l S
+n 496.8 0 m 496.8 220 l S
+n 0 200 m 496.8 200 l S
+n 0 180 m 496.8 180 l S
+n 0 160 m 496.8 160 l S
+n 0 140 m 496.8 140 l S
+n 0 120 m 496.8 120 l S
+n 0 100 m 496.8 100 l S
+n 0 80 m 496.8 80 l S
+n 0 60 m 496.8 60 l S
+n 0 40 m 496.8 40 l S
+n 0 20 m 496.8 20 l S
+n 151.2 0 m 151.2 220 l S
+Q
+Q
+Q
+q
+1 0 0 1 45.6 496.4 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 13 Tf 16 TL (11. Report Lock and Integrity) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 370.4 cm
+q
+.898039 .905882 .921569 rg
+n 0 120 496.8 -20 re f*
+.066667 .094118 .152941 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Field) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 8 Tf 10 TL (Value) Tj T* ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Lock Status) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 85 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Locked) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 65 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Locked By) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 65 cm
+q
+BT 1 0 0 1 0 2 Tm 10 TL /F1 8 Tf 0 0 0 rg (yuvi <) Tj (yuviverks@gamil.com) Tj (>) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Locked Date/Time) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 45 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (2026-05-19T21:05:58Z) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Final PDF Hash) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 25 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Pending first approved PDF download.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (Report Version) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 8 Tf 10 TL (1.0) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.4 w
+n 0 120 m 496.8 120 l S
+n 0 0 m 496.8 0 l S
+n 0 0 m 0 120 l S
+n 496.8 0 m 496.8 120 l S
+n 0 100 m 496.8 100 l S
+n 0 80 m 496.8 80 l S
+n 0 60 m 496.8 60 l S
+n 0 40 m 496.8 40 l S
+n 0 20 m 496.8 20 l S
+n 151.2 0 m 151.2 120 l S
+Q
+Q
+Q
+q
+1 0 0 1 45.6 340.4 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 13 Tf 16 TL (12. System Notes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 322.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (- Generated by Compliance Manager / ValidateNow.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 310.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (- Deterministic checks used.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 298.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (- Raw audit payload is not included unless attached separately.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 286.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (- Human approval required unless status is APPROVED.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 274.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (- Approved reports are controlled compliance evidence.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+xref
+0 19
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000516 00000 n 
+0000000711 00000 n 
+0000000906 00000 n 
+0000001101 00000 n 
+0000001296 00000 n 
+0000001491 00000 n 
+0000001561 00000 n 
+0000001888 00000 n 
+0000001978 00000 n 
+0000009800 00000 n 
+0000018189 00000 n 
+0000029406 00000 n 
+0000042203 00000 n 
+0000051462 00000 n 
+trailer
+<<
+/ID 
+[<64c2e4d232b6ab29e101c024f19aae13><64c2e4d232b6ab29e101c024f19aae13>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 11 0 R
+/Root 10 0 R
+/Size 19
+>>
+startxref
+56955
+%%EOF
