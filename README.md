@@ -1,4 +1,4 @@
-# ValidateNow Backend Schema Management
+# Compliance Manager Backend Schema Management
 
 ## Fresh setup
 
