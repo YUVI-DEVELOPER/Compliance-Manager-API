@@ -7,6 +7,7 @@ from fastapi import HTTPException, status
 from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core import audit_actions
 from app.core.security import hash_password
 from app.models.app_user import AppUser
 from app.models.role import Role
@@ -71,6 +72,8 @@ async def create_user(
     payload: UserCreateRequest,
     *,
     actor_id: uuid.UUID | None = None,
+    request=None,
+    current_user=None,
 ) -> UserResponse:
     email = payload.email.lower().strip()
     existing = await get_user_by_email(db, email)
@@ -102,6 +105,12 @@ async def create_user(
         record_pk={"id": str(user.id)},
         new_data={"email": user.email, "role_codes": [normalize_code(code) for code in payload.role_codes]},
         changed_by=actor_id,
+        module_name="User Management",
+        entity_name="User",
+        action=audit_actions.USER_CREATED,
+        event_description="User created",
+        request=request,
+        current_user=current_user,
     )
     await db.commit()
     await db.refresh(user)
@@ -114,6 +123,8 @@ async def update_user(
     payload: UserUpdateRequest,
     *,
     actor_id: uuid.UUID | None = None,
+    request=None,
+    current_user=None,
 ) -> UserResponse:
     user = await get_user_by_id(db, user_id)
     old_data = {
@@ -152,6 +163,12 @@ async def update_user(
         old_data=old_data,
         new_data=updates,
         changed_by=actor_id,
+        module_name="User Management",
+        entity_name="User",
+        action=audit_actions.USER_UPDATED,
+        event_description="User updated",
+        request=request,
+        current_user=current_user,
     )
     await db.commit()
     await db.refresh(user)
@@ -164,6 +181,8 @@ async def set_user_active(
     is_active: bool,
     *,
     actor_id: uuid.UUID | None = None,
+    request=None,
+    current_user=None,
 ) -> UserResponse:
     user = await get_user_by_id(db, user_id)
     old_active = user.is_active
@@ -177,6 +196,12 @@ async def set_user_active(
         old_data={"is_active": old_active},
         new_data={"is_active": is_active},
         changed_by=actor_id,
+        module_name="User Management",
+        entity_name="User",
+        action=audit_actions.USER_ACTIVATED if is_active else audit_actions.USER_DEACTIVATED,
+        event_description="User activated" if is_active else "User deactivated",
+        request=request,
+        current_user=current_user,
     )
     await db.commit()
     await db.refresh(user)
@@ -189,6 +214,8 @@ async def reset_user_password(
     payload: UserResetPasswordRequest,
     *,
     actor_id: uuid.UUID | None = None,
+    request=None,
+    current_user=None,
 ) -> UserResponse:
     user = await get_user_by_id(db, user_id)
     user.password_hash = hash_password(payload.new_password)
@@ -204,6 +231,12 @@ async def reset_user_password(
         old_data=None,
         new_data={"password_reset": True},
         changed_by=actor_id,
+        module_name="User Management",
+        entity_name="User",
+        action=audit_actions.USER_UPDATED,
+        event_description="User password reset",
+        request=request,
+        current_user=current_user,
     )
     await db.commit()
     await db.refresh(user)
@@ -235,19 +268,31 @@ async def set_user_roles(
     payload: UserRoleAssignmentRequest,
     *,
     actor_id: uuid.UUID | None = None,
+    request=None,
+    current_user=None,
 ) -> UserResponse:
     user = await get_user_by_id(db, user_id)
     old_roles, _ = await get_user_role_permission_profile(db, user.id)
+    new_roles = [normalize_code(code) for code in payload.role_codes]
     await _replace_user_roles(db, user, payload.role_codes, actor_id=actor_id)
     user.updated_by = actor_id
+    action = audit_actions.USER_ROLE_ASSIGNED
+    if set(new_roles) < set(old_roles) or (set(old_roles) - set(new_roles) and not (set(new_roles) - set(old_roles))):
+        action = audit_actions.USER_ROLE_REMOVED
     await record_audit_event(
         db,
         table_name="user_role",
         operation_type="UPDATE",
         record_pk={"user_id": str(user.id)},
         old_data={"role_codes": old_roles},
-        new_data={"role_codes": [normalize_code(code) for code in payload.role_codes]},
+        new_data={"role_codes": new_roles},
         changed_by=actor_id,
+        module_name="User Management",
+        entity_name="User Role",
+        action=action,
+        event_description="User role assignment changed",
+        request=request,
+        current_user=current_user,
     )
     await db.commit()
     await db.refresh(user)

@@ -106,6 +106,8 @@ PERMISSION_CATALOG: tuple[PermissionSeed, ...] = (
     _permission("AUDIT_REPORT_APPROVE", "AUDIT_REPORT", "APPROVE"),
     _permission("AUDIT_REPORT_REJECT", "AUDIT_REPORT", "REJECT"),
     _permission("AUDIT_REPORT_REQUEST_CHANGES", "AUDIT_REPORT", "REQUEST_CHANGES"),
+    _permission("AUDIT_LOG_VIEW", "AUDIT_LOG", "VIEW"),
+    _permission("AUDIT_LOG_EXPORT", "AUDIT_LOG", "EXPORT"),
     _permission("SCHEDULE_VIEW", "SCHEDULE", "VIEW"),
     _permission("SCHEDULE_CREATE", "SCHEDULE", "CREATE"),
     _permission("SCHEDULE_UPDATE", "SCHEDULE", "UPDATE"),
@@ -247,6 +249,16 @@ PERMISSION_GROUP_CATALOG: tuple[PermissionGroupSeed, ...] = (
         ),
     ),
     _group(
+        "AUDIT_LOG_ADMINISTRATION",
+        "Audit Log Administration",
+        "AUDIT_LOG",
+        85,
+        (
+            "AUDIT_LOG_VIEW",
+            "AUDIT_LOG_EXPORT",
+        ),
+    ),
+    _group(
         "SCHEDULE_VIEW_ONLY",
         "Schedule View Only",
         "SCHEDULE",
@@ -330,6 +342,7 @@ ADMIN_PERMISSION_GROUP_CODES: tuple[str, ...] = (
     "AUDIT_FINDING_REVIEW",
     "AUDIT_DRAFT_REPORT_GENERATION",
     "AUDIT_REPORT_SUBMISSION",
+    "AUDIT_LOG_ADMINISTRATION",
     "SCHEDULE_MANAGEMENT",
     "NOTIFICATION_MANAGEMENT",
     "LOOKUP_CONFIGURATION",

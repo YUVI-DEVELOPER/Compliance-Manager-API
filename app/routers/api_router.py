@@ -4,6 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.auth_dependencies import require_permission
 from app.core.database import get_db
 from app.routers.audit_review_router import router as audit_review_router
+from app.routers.audit_log_router import router as audit_log_router
 from app.routers.auth_router import router as auth_router
 from app.routers.authored_document_router import router as authored_document_router
 from app.routers.asset_group_router import router as asset_group_router
@@ -79,6 +80,7 @@ api_router.include_router(asset_finance_router)
 api_router.include_router(asset_location_router)
 api_router.include_router(asset_router)
 api_router.include_router(audit_review_router)
+api_router.include_router(audit_log_router)
 api_router.include_router(asset_spec_router)
 api_router.include_router(authored_document_router)
 api_router.include_router(release_router)

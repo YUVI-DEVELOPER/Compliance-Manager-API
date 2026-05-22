@@ -56,10 +56,11 @@ async def list_users_api(
 @router.post("", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
 async def create_user_api(
     payload: UserCreateRequest,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("USER_CREATE")),
     db: AsyncSession = Depends(get_db),
 ) -> UserResponse:
-    return await create_user(db, payload, actor_id=current_user.id)
+    return await create_user(db, payload, actor_id=current_user.id, request=request, current_user=current_user)
 
 
 @router.get("/{user_id}", response_model=UserResponse)
@@ -76,38 +77,42 @@ async def get_user_api(
 async def update_user_api(
     user_id: uuid.UUID,
     payload: UserUpdateRequest,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("USER_UPDATE")),
     db: AsyncSession = Depends(get_db),
 ) -> UserResponse:
-    return await update_user(db, user_id, payload, actor_id=current_user.id)
+    return await update_user(db, user_id, payload, actor_id=current_user.id, request=request, current_user=current_user)
 
 
 @router.patch("/{user_id}/activate", response_model=UserResponse)
 async def activate_user_api(
     user_id: uuid.UUID,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("USER_UPDATE")),
     db: AsyncSession = Depends(get_db),
 ) -> UserResponse:
-    return await set_user_active(db, user_id, True, actor_id=current_user.id)
+    return await set_user_active(db, user_id, True, actor_id=current_user.id, request=request, current_user=current_user)
 
 
 @router.patch("/{user_id}/deactivate", response_model=UserResponse)
 async def deactivate_user_api(
     user_id: uuid.UUID,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("USER_DELETE")),
     db: AsyncSession = Depends(get_db),
 ) -> UserResponse:
-    return await set_user_active(db, user_id, False, actor_id=current_user.id)
+    return await set_user_active(db, user_id, False, actor_id=current_user.id, request=request, current_user=current_user)
 
 
 @router.patch("/{user_id}/reset-password", response_model=UserResponse)
 async def reset_user_password_api(
     user_id: uuid.UUID,
     payload: UserResetPasswordRequest,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("USER_UPDATE")),
     db: AsyncSession = Depends(get_db),
 ) -> UserResponse:
-    return await reset_user_password(db, user_id, payload, actor_id=current_user.id)
+    return await reset_user_password(db, user_id, payload, actor_id=current_user.id, request=request, current_user=current_user)
 
 
 @router.get("/{user_id}/roles", response_model=list[str])
@@ -123,7 +128,8 @@ async def get_user_roles_api(
 async def set_user_roles_api(
     user_id: uuid.UUID,
     payload: UserRoleAssignmentRequest,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("USER_ASSIGN_ROLE")),
     db: AsyncSession = Depends(get_db),
 ) -> UserResponse:
-    return await set_user_roles(db, user_id, payload, actor_id=current_user.id)
+    return await set_user_roles(db, user_id, payload, actor_id=current_user.id, request=request, current_user=current_user)

@@ -7,6 +7,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
+from app.core import audit_actions
 from app.models.asset import Asset
 from app.models.asset_release import AssetRelease
 from app.models.lookup_master import LookupMaster
@@ -18,6 +19,7 @@ from app.schemas.document_link_schema import (
     DocumentLinkUpdate,
     DocumentVectorizationJobResponse,
 )
+from app.services.audit_log_service import create_audit_log, serialize_model_to_dict
 from app.services.document_vectorization_service import (
     can_reprocess_vectorization_job,
     deactivate_vectorization_for_document_link,
@@ -265,6 +267,8 @@ async def create_document_for_asset(
     payload: DocumentLinkCreate,
     *,
     base_url: str | None = None,
+    request=None,
+    current_user=None,
 ) -> DocumentLinkResponse:
     asset = await _get_asset_by_id(db, asset_id)
     if asset is None:
@@ -310,6 +314,18 @@ async def create_document_for_asset(
     try:
         await db.flush()
         await prepare_vectorization_job_for_document_link(db, document_link, base_url=base_url)
+        await create_audit_log(
+            db,
+            request=request,
+            current_user=current_user,
+            module_name="Document Management",
+            entity_name="Document Link",
+            table_name="validated_document_link",
+            record_id=document_link.document_link_id,
+            action=audit_actions.DOCUMENT_LINKED,
+            event_description="Document linked to asset",
+            new_data=serialize_model_to_dict(document_link),
+        )
         await db.commit()
     except IntegrityError as exc:
         await db.rollback()
@@ -339,6 +355,8 @@ async def create_document_for_release(
     payload: DocumentLinkCreate,
     *,
     base_url: str | None = None,
+    request=None,
+    current_user=None,
 ) -> DocumentLinkResponse:
     release = await _get_release_by_id(db, release_id)
     if release is None:
@@ -384,6 +402,18 @@ async def create_document_for_release(
     try:
         await db.flush()
         await prepare_vectorization_job_for_document_link(db, document_link, base_url=base_url)
+        await create_audit_log(
+            db,
+            request=request,
+            current_user=current_user,
+            module_name="Document Management",
+            entity_name="Document Link",
+            table_name="validated_document_link",
+            record_id=document_link.document_link_id,
+            action=audit_actions.DOCUMENT_LINKED,
+            event_description="Document linked to release",
+            new_data=serialize_model_to_dict(document_link),
+        )
         await db.commit()
     except IntegrityError as exc:
         await db.rollback()
@@ -405,11 +435,14 @@ async def update_document_link(
     payload: DocumentLinkUpdate,
     *,
     base_url: str | None = None,
+    request=None,
+    current_user=None,
 ) -> DocumentLinkResponse:
     document_link = await _get_document_link_model_by_id(db, document_link_id)
     if document_link is None:
         raise ServiceNotFoundError("Document link not found")
 
+    old_data = serialize_model_to_dict(document_link)
     updates = payload.model_dump(exclude_unset=True)
     should_refresh_vectorization = bool(
         {
@@ -497,6 +530,19 @@ async def update_document_link(
         if should_refresh_vectorization:
             await db.flush()
             await prepare_vectorization_job_for_document_link(db, document_link, base_url=base_url)
+        await create_audit_log(
+            db,
+            request=request,
+            current_user=current_user,
+            module_name="Document Management",
+            entity_name="Document Link",
+            table_name="validated_document_link",
+            record_id=document_link.document_link_id,
+            action=audit_actions.DOCUMENT_METADATA_UPDATED,
+            event_description="Document metadata updated",
+            old_data=old_data,
+            new_data=serialize_model_to_dict(document_link),
+        )
         await db.commit()
     except IntegrityError as exc:
         await db.rollback()
@@ -600,13 +646,27 @@ async def upsert_document_link_reference(
     return existing
 
 
-async def delete_document_link(db: AsyncSession, document_link_id: uuid.UUID) -> None:
+async def delete_document_link(db: AsyncSession, document_link_id: uuid.UUID, *, request=None, current_user=None) -> None:
     document_link = await _get_document_link_model_by_id(db, document_link_id)
     if document_link is None:
         raise ServiceNotFoundError("Document link not found")
 
     try:
+        old_data = serialize_model_to_dict(document_link)
         await deactivate_vectorization_for_document_link(db, document_link_id)
+        await create_audit_log(
+            db,
+            request=request,
+            current_user=current_user,
+            module_name="Document Management",
+            entity_name="Document Link",
+            table_name="validated_document_link",
+            record_id=document_link.document_link_id,
+            action=audit_actions.DOCUMENT_DEACTIVATED,
+            event_description="Document link deleted/deactivated",
+            old_data=old_data,
+            new_data={"deleted": True, "document_link_id": str(document_link_id)},
+        )
         await db.delete(document_link)
         await db.commit()
     except IntegrityError as exc:

@@ -1,6 +1,6 @@
 import uuid
 
-from fastapi import APIRouter, Depends, Query, status
+from fastapi import APIRouter, Depends, Query, Request, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.auth_dependencies import require_permission
@@ -41,10 +41,11 @@ async def list_roles_api(
 @router.post("", response_model=RoleResponse, status_code=status.HTTP_201_CREATED)
 async def create_role_api(
     payload: RoleCreateRequest,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("ROLE_CREATE")),
     db: AsyncSession = Depends(get_db),
 ) -> RoleResponse:
-    return await create_role(db, payload, actor_id=current_user.id)
+    return await create_role(db, payload, actor_id=current_user.id, request=request, current_user=current_user)
 
 
 @router.get("/{role_id}", response_model=RoleResponse)
@@ -60,28 +61,31 @@ async def get_role_api(
 async def update_role_api(
     role_id: uuid.UUID,
     payload: RoleUpdateRequest,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("ROLE_UPDATE")),
     db: AsyncSession = Depends(get_db),
 ) -> RoleResponse:
-    return await update_role(db, role_id, payload, actor_id=current_user.id)
+    return await update_role(db, role_id, payload, actor_id=current_user.id, request=request, current_user=current_user)
 
 
 @router.patch("/{role_id}/activate", response_model=RoleResponse)
 async def activate_role_api(
     role_id: uuid.UUID,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("ROLE_UPDATE")),
     db: AsyncSession = Depends(get_db),
 ) -> RoleResponse:
-    return await set_role_active(db, role_id, True, actor_id=current_user.id)
+    return await set_role_active(db, role_id, True, actor_id=current_user.id, request=request, current_user=current_user)
 
 
 @router.patch("/{role_id}/deactivate", response_model=RoleResponse)
 async def deactivate_role_api(
     role_id: uuid.UUID,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("ROLE_DELETE")),
     db: AsyncSession = Depends(get_db),
 ) -> RoleResponse:
-    return await set_role_active(db, role_id, False, actor_id=current_user.id)
+    return await set_role_active(db, role_id, False, actor_id=current_user.id, request=request, current_user=current_user)
 
 
 @router.get("/{role_id}/permissions", response_model=list[str])
@@ -108,17 +112,19 @@ async def get_role_permission_groups_api(
 async def set_role_permissions_api(
     role_id: uuid.UUID,
     payload: RolePermissionAssignmentRequest,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("ROLE_ASSIGN_PERMISSION")),
     db: AsyncSession = Depends(get_db),
 ) -> RoleResponse:
-    return await set_role_permissions(db, role_id, payload, actor_id=current_user.id)
+    return await set_role_permissions(db, role_id, payload, actor_id=current_user.id, request=request, current_user=current_user)
 
 
 @router.patch("/{role_id}/permission-groups", response_model=RoleResponse)
 async def set_role_permission_groups_api(
     role_id: uuid.UUID,
     payload: RolePermissionGroupAssignmentRequest,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("ROLE_ASSIGN_PERMISSION")),
     db: AsyncSession = Depends(get_db),
 ) -> RoleResponse:
-    return await set_role_permission_groups(db, role_id, payload, actor_id=current_user.id)
+    return await set_role_permission_groups(db, role_id, payload, actor_id=current_user.id, request=request, current_user=current_user)
