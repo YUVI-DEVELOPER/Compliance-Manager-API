@@ -27,3 +27,4 @@ uploads/
 
 # Alembic cache (optional)
 *.sqlite3
+filestorage/
