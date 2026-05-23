@@ -113,7 +113,14 @@ async def asset_document_create(
     current_user: CurrentUser = Depends(require_permission("DOCUMENT_LINK")),
     db: AsyncSession = Depends(get_db),
 ) -> dict[str, object]:
-    data = await create_document_for_asset(db, asset_id, payload, base_url=_base_url(request))
+    data = await create_document_for_asset(
+        db,
+        asset_id,
+        payload,
+        base_url=_base_url(request),
+        request=request,
+        current_user=current_user,
+    )
     _queue_vectorization_if_needed(background_tasks, data)
     return {
         "success": True,
@@ -145,7 +152,14 @@ async def release_document_create(
     current_user: CurrentUser = Depends(require_permission("DOCUMENT_LINK")),
     db: AsyncSession = Depends(get_db),
 ) -> dict[str, object]:
-    data = await create_document_for_release(db, release_id, payload, base_url=_base_url(request))
+    data = await create_document_for_release(
+        db,
+        release_id,
+        payload,
+        base_url=_base_url(request),
+        request=request,
+        current_user=current_user,
+    )
     _queue_vectorization_if_needed(background_tasks, data)
     return {
         "success": True,
@@ -256,7 +270,14 @@ async def document_link_update(
     current_user: CurrentUser = Depends(require_permission("DOCUMENT_UPDATE")),
     db: AsyncSession = Depends(get_db),
 ) -> dict[str, object]:
-    data = await update_document_link(db, document_link_id, payload, base_url=_base_url(request))
+    data = await update_document_link(
+        db,
+        document_link_id,
+        payload,
+        base_url=_base_url(request),
+        request=request,
+        current_user=current_user,
+    )
     _queue_vectorization_if_needed(background_tasks, data)
     return {
         "success": True,
@@ -268,11 +289,12 @@ async def document_link_update(
 @router.delete("/document-link/{document_link_id}", response_model=ApiResponse)
 async def document_link_delete(
     document_link_id: uuid.UUID,
+    request: Request,
     background_tasks: BackgroundTasks,
     current_user: CurrentUser = Depends(require_permission("DOCUMENT_DELETE")),
     db: AsyncSession = Depends(get_db),
 ) -> dict[str, object]:
-    await delete_document_link(db, document_link_id)
+    await delete_document_link(db, document_link_id, request=request, current_user=current_user)
     background_tasks.add_task(delete_document_vectors_background, document_link_id)
     return {
         "success": True,

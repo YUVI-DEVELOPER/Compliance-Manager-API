@@ -7,12 +7,14 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
+from app.core import audit_actions
 from app.models.asset import Asset
 from app.models.lookup_master import LookupMaster
 from app.models.lookup_value import LookupValue
 from app.models.org_structure import OrgStructure
 from app.models.supplier import Supplier
 from app.schemas.asset_schema import AssetCreate, AssetResponse, AssetUpdate
+from app.services.audit_log_service import create_audit_log, serialize_model_to_dict
 
 ASSET_CLASS_LOOKUP_KEY = "ASSET_CLASS"
 ASSET_CATEGORY_LOOKUP_KEY = "ASSET_CATEGORY"
@@ -346,6 +348,18 @@ def _conflict_message_from_integrity_error(exc: IntegrityError) -> str:
     return "Operation failed due to a data conflict"
 
 
+def _asset_update_action(old_data: dict | None, new_data: dict | None) -> str:
+    old_data = old_data or {}
+    new_data = new_data or {}
+    if old_data.get("asset_owner") != new_data.get("asset_owner"):
+        return audit_actions.ASSET_OWNER_CHANGED
+    if old_data.get("asset_status") != new_data.get("asset_status"):
+        return audit_actions.ASSET_STATUS_CHANGED
+    if old_data.get("criticality_class") != new_data.get("criticality_class"):
+        return audit_actions.ASSET_CRITICALITY_CHANGED
+    return audit_actions.ASSET_UPDATED
+
+
 async def get_assets(
     db: AsyncSession,
     org_node_id: uuid.UUID | None = None,
@@ -377,7 +391,7 @@ async def get_asset_by_id(db: AsyncSession, asset_id: uuid.UUID) -> AssetRespons
     )
 
 
-async def create_asset(db: AsyncSession, payload: AssetCreate) -> AssetResponse:
+async def create_asset(db: AsyncSession, payload: AssetCreate, *, request=None, current_user=None) -> AssetResponse:
     await _validate_org_node_id(db, payload.org_node_id)
     await _validate_supplier_id(db, payload.supplier_id)
 
@@ -474,6 +488,19 @@ async def create_asset(db: AsyncSession, payload: AssetCreate) -> AssetResponse:
     db.add(asset)
 
     try:
+        await db.flush()
+        await create_audit_log(
+            db,
+            request=request,
+            current_user=current_user,
+            module_name="Asset Master",
+            entity_name="Asset",
+            table_name="asset_basic_info",
+            record_id=asset.asset_uuid,
+            action=audit_actions.ASSET_CREATED,
+            event_description="Asset created",
+            new_data=serialize_model_to_dict(asset),
+        )
         await db.commit()
     except IntegrityError as exc:
         await db.rollback()
@@ -483,11 +510,12 @@ async def create_asset(db: AsyncSession, payload: AssetCreate) -> AssetResponse:
     return await get_asset_by_id(db, asset.asset_uuid)
 
 
-async def update_asset(db: AsyncSession, asset_id: uuid.UUID, payload: AssetUpdate) -> AssetResponse:
+async def update_asset(db: AsyncSession, asset_id: uuid.UUID, payload: AssetUpdate, *, request=None, current_user=None) -> AssetResponse:
     asset = await _get_asset_by_uuid(db, asset_id)
     if asset is None:
         raise ServiceNotFoundError("Asset not found")
 
+    old_data = serialize_model_to_dict(asset)
     updates = payload.model_dump(exclude_unset=True)
 
     required_nullable_fields = (
@@ -653,6 +681,20 @@ async def update_asset(db: AsyncSession, asset_id: uuid.UUID, payload: AssetUpda
         asset.modified_by = _normalize_optional_string(updates["modified_by"], "modified_by", 150)
 
     asset.modified_dt = datetime.now(UTC)
+    new_data = serialize_model_to_dict(asset)
+    await create_audit_log(
+        db,
+        request=request,
+        current_user=current_user,
+        module_name="Asset Master",
+        entity_name="Asset",
+        table_name="asset_basic_info",
+        record_id=asset.asset_uuid,
+        action=_asset_update_action(old_data, new_data),
+        event_description="Asset updated",
+        old_data=old_data,
+        new_data=new_data,
+    )
 
     try:
         await db.commit()
@@ -664,12 +706,26 @@ async def update_asset(db: AsyncSession, asset_id: uuid.UUID, payload: AssetUpda
     return await get_asset_by_id(db, asset.asset_uuid)
 
 
-async def delete_asset(db: AsyncSession, asset_id: uuid.UUID) -> None:
+async def delete_asset(db: AsyncSession, asset_id: uuid.UUID, *, request=None, current_user=None) -> None:
     asset = await _get_asset_by_uuid(db, asset_id)
     if asset is None:
         raise ServiceNotFoundError("Asset not found")
 
     try:
+        old_data = serialize_model_to_dict(asset)
+        await create_audit_log(
+            db,
+            request=request,
+            current_user=current_user,
+            module_name="Asset Master",
+            entity_name="Asset",
+            table_name="asset_basic_info",
+            record_id=asset.asset_uuid,
+            action=audit_actions.ASSET_DEACTIVATED,
+            event_description="Asset deleted/deactivated",
+            old_data=old_data,
+            new_data={"deleted": True, "asset_uuid": str(asset.asset_uuid)},
+        )
         await db.delete(asset)
         await db.commit()
     except IntegrityError as exc:

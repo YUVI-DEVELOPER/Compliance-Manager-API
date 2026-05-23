@@ -8,7 +8,7 @@ from fastapi import HTTPException, status
 from sqlalchemy import delete, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.audit_log import AuditLog
+from app.services.audit_log_service import create_audit_log
 from app.models.permission import Permission
 from app.models.permission_group import PermissionGroup
 from app.models.permission_group_item import PermissionGroupItem
@@ -77,18 +77,38 @@ async def record_audit_event(
     old_data: dict[str, Any] | None = None,
     new_data: dict[str, Any] | None = None,
     changed_by: uuid.UUID | str | None = None,
+    module_name: str | None = None,
+    entity_name: str | None = None,
+    action: str | None = None,
+    event_description: str | None = None,
+    reason: str | None = None,
+    request: Any | None = None,
+    current_user: Any | None = None,
 ) -> None:
-    db.add(
-        AuditLog(
-            table_name=table_name,
-            operation_type=operation_type[:10],
-            record_pk=record_pk,
-            old_data=old_data,
-            new_data=new_data,
-            changed_columns=None,
-            changed_by=str(changed_by) if changed_by is not None else None,
-            application_name="Compliance Manager",
-        )
+    normalized_table = table_name.replace("_", " ").title()
+    normalized_operation = operation_type.strip().upper()
+    default_action = {
+        "INSERT": f"{table_name.upper()}_CREATED",
+        "UPDATE": f"{table_name.upper()}_UPDATED",
+        "DELETE": f"{table_name.upper()}_DELETED",
+    }.get(normalized_operation, f"{table_name.upper()}_{normalized_operation}")
+    record_id = None
+    if record_pk:
+        record_id = record_pk.get("id") or record_pk.get("user_id") or record_pk.get("role_id")
+
+    await create_audit_log(
+        db,
+        request=request,
+        current_user=current_user or changed_by,
+        module_name=module_name or normalized_table,
+        entity_name=entity_name or normalized_table,
+        table_name=table_name,
+        record_id=record_id,
+        action=action or default_action,
+        event_description=event_description,
+        old_data=old_data,
+        new_data=new_data,
+        reason=reason,
     )
 
 
@@ -479,6 +499,8 @@ async def create_role(
     payload: RoleCreateRequest,
     *,
     actor_id: uuid.UUID | None = None,
+    request: Any | None = None,
+    current_user: Any | None = None,
 ) -> RoleResponse:
     role_code = normalize_code(payload.role_code)
     existing = await db.execute(select(Role.id).where(Role.role_code == role_code))
@@ -505,6 +527,12 @@ async def create_role(
         record_pk={"id": str(role.id)},
         new_data={"role_code": role.role_code},
         changed_by=actor_id,
+        module_name="Role and Permission",
+        entity_name="Role",
+        action=audit_actions.ROLE_CREATED,
+        event_description="Role created",
+        request=request,
+        current_user=current_user,
     )
     await db.commit()
     await db.refresh(role)
@@ -517,6 +545,8 @@ async def update_role(
     payload: RoleUpdateRequest,
     *,
     actor_id: uuid.UUID | None = None,
+    request: Any | None = None,
+    current_user: Any | None = None,
 ) -> RoleResponse:
     role = await get_role_by_id(db, role_id)
     old_data = {"role_name": role.role_name, "description": role.description}
@@ -534,6 +564,12 @@ async def update_role(
         old_data=old_data,
         new_data=updates,
         changed_by=actor_id,
+        module_name="Role and Permission",
+        entity_name="Role",
+        action=audit_actions.ROLE_UPDATED,
+        event_description="Role updated",
+        request=request,
+        current_user=current_user,
     )
     await db.commit()
     await db.refresh(role)
@@ -546,6 +582,8 @@ async def set_role_active(
     is_active: bool,
     *,
     actor_id: uuid.UUID | None = None,
+    request: Any | None = None,
+    current_user: Any | None = None,
 ) -> RoleResponse:
     role = await get_role_by_id(db, role_id)
     old_active = role.is_active
@@ -559,6 +597,12 @@ async def set_role_active(
         old_data={"is_active": old_active},
         new_data={"is_active": is_active},
         changed_by=actor_id,
+        module_name="Role and Permission",
+        entity_name="Role",
+        action=audit_actions.ROLE_UPDATED if is_active else audit_actions.ROLE_DEACTIVATED,
+        event_description="Role activated" if is_active else "Role deactivated",
+        request=request,
+        current_user=current_user,
     )
     await db.commit()
     await db.refresh(role)
@@ -599,19 +643,31 @@ async def set_role_permissions(
     payload: RolePermissionAssignmentRequest,
     *,
     actor_id: uuid.UUID | None = None,
+    request: Any | None = None,
+    current_user: Any | None = None,
 ) -> RoleResponse:
     role = await get_role_by_id(db, role_id)
     old_permissions = await get_direct_role_permission_codes(db, role.id)
+    new_permissions = [normalize_code(code) for code in payload.permission_codes]
     await _replace_role_permissions(db, role, payload.permission_codes, actor_id=actor_id)
     role.updated_by = actor_id
+    action = audit_actions.PERMISSION_ASSIGNED
+    if set(new_permissions) < set(old_permissions) or (set(old_permissions) - set(new_permissions) and not (set(new_permissions) - set(old_permissions))):
+        action = audit_actions.PERMISSION_REMOVED
     await record_audit_event(
         db,
         table_name="role_permission",
         operation_type="UPDATE",
         record_pk={"role_id": str(role.id)},
         old_data={"permission_codes": old_permissions},
-        new_data={"permission_codes": [normalize_code(code) for code in payload.permission_codes]},
+        new_data={"permission_codes": new_permissions},
         changed_by=actor_id,
+        module_name="Role and Permission",
+        entity_name="Role Permission",
+        action=action,
+        event_description="Role direct permissions changed",
+        request=request,
+        current_user=current_user,
     )
     await db.commit()
     await db.refresh(role)
@@ -624,20 +680,33 @@ async def set_role_permission_groups(
     payload: RolePermissionGroupAssignmentRequest,
     *,
     actor_id: uuid.UUID | None = None,
+    request: Any | None = None,
+    current_user: Any | None = None,
 ) -> RoleResponse:
     role = await get_role_by_id(db, role_id)
     old_groups = await get_role_permission_group_codes(db, role.id)
+    new_groups = [normalize_code(code) for code in payload.permission_group_codes]
     await _replace_role_permission_groups(db, role, payload.permission_group_codes, actor_id=actor_id)
     role.updated_by = actor_id
+    action = audit_actions.PERMISSION_ASSIGNED
+    if set(new_groups) < set(old_groups) or (set(old_groups) - set(new_groups) and not (set(new_groups) - set(old_groups))):
+        action = audit_actions.PERMISSION_REMOVED
     await record_audit_event(
         db,
         table_name="role_permission_group",
         operation_type="UPDATE",
         record_pk={"role_id": str(role.id)},
         old_data={"permission_group_codes": old_groups},
-        new_data={"permission_group_codes": [normalize_code(code) for code in payload.permission_group_codes]},
+        new_data={"permission_group_codes": new_groups},
         changed_by=actor_id,
+        module_name="Role and Permission",
+        entity_name="Role Permission Group",
+        action=action,
+        event_description="Role permission groups changed",
+        request=request,
+        current_user=current_user,
     )
     await db.commit()
     await db.refresh(role)
     return await _role_response(db, role)
+from app.core import audit_actions
