@@ -1436,13 +1436,7 @@ async def _start_schedule_execution(
     active_run = active_result.scalars().first()
     if active_run is not None:
         if _to_utc(active_run.started_at) >= now - STARTED_RUN_STALE_AFTER:
-            run = await _create_skipped_run(
-                db,
-                schedule,
-                message="Another scheduler run is already in progress for this schedule.",
-                summary={"active_run_id": str(active_run.run_id), "active_started_at": _iso_utc(active_run.started_at)},
-            )
-            return None, run
+            return None, active_run
 
         active_run.status = AUDIT_REVIEW_SCHEDULE_RUN_STATUS_FAILED
         active_run.completed_at = now
@@ -1928,6 +1922,7 @@ async def run_due_audit_review_schedules(db: AsyncSession) -> AuditReviewSchedul
             response = await run_audit_review_schedule_due(db, schedule_id)
             runs.append(response.run)
         except Exception:  # noqa: BLE001 - one broken schedule must not block the due batch.
+            logger.exception("audit_review_scheduler_schedule_failed schedule_id=%s", schedule_id)
             await db.rollback()
             continue
 
