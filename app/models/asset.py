@@ -62,6 +62,7 @@ class Asset(Base):
     criticality_class: Mapped[str] = mapped_column("asset_criticality", String(50), nullable=False)
     asset_nature: Mapped[str] = mapped_column(String(50), nullable=False)
     tags: Mapped[list[str] | None] = mapped_column(JSONB, nullable=True)
+    asset_spec_values: Mapped[list[dict[str, str | None]] | None] = mapped_column(JSONB, nullable=True)
 
     asset_name: Mapped[str] = mapped_column(String(100), nullable=False)
     asset_description: Mapped[str] = mapped_column(String(500), nullable=False)
