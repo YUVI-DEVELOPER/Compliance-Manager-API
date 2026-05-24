@@ -1,7 +1,7 @@
 """Add asset spec values snapshot to asset master.
 
-Revision ID: 20260522_0039
-Revises: 20260520_0038
+Revision ID: 20260522_0040
+Revises: 20260522_0039
 Create Date: 2026-05-22 19:30:00
 
 """
@@ -13,8 +13,8 @@ import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
 
-revision = "20260522_0039"
-down_revision = "20260520_0038"
+revision = "20260522_0040"
+down_revision = "20260522_0039"
 branch_labels = None
 depends_on = None
 
