@@ -8,11 +8,12 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.models.asset import Asset
+from app.models.asset_spec import AssetSpec
 from app.models.lookup_master import LookupMaster
 from app.models.lookup_value import LookupValue
 from app.models.org_structure import OrgStructure
 from app.models.supplier import Supplier
-from app.schemas.asset_schema import AssetCreate, AssetResponse, AssetUpdate
+from app.schemas.asset_schema import AssetCreate, AssetResponse, AssetSpecValue, AssetUpdate
 
 ASSET_CLASS_LOOKUP_KEY = "ASSET_CLASS"
 ASSET_CATEGORY_LOOKUP_KEY = "ASSET_CATEGORY"
@@ -100,6 +101,44 @@ def _normalize_tags(value: list[str] | None) -> list[str] | None:
         normalized_tags.append(normalized)
 
     return normalized_tags or None
+
+
+def _normalize_asset_spec_values_for_response(
+    value: object,
+) -> list[dict[str, str | None]] | None:
+    if not isinstance(value, list):
+        return None
+
+    normalized_items: list[dict[str, str | None]] = []
+    for raw_item in value:
+        if not isinstance(raw_item, dict):
+            continue
+
+        asset_spec_id = _strip_optional(str(raw_item.get("asset_spec_id") or ""))
+        parameter_grouping = _strip_optional(str(raw_item.get("parameter_grouping") or ""))
+        parameter_name = _strip_optional(str(raw_item.get("parameter_name") or ""))
+        parameter_value = _strip_optional(str(raw_item.get("parameter_value") or ""))
+
+        if not asset_spec_id or not parameter_grouping or not parameter_name or parameter_value is None:
+            continue
+
+        parameter_description_raw = raw_item.get("parameter_description")
+        if parameter_description_raw is None and "guidelines" in raw_item:
+            parameter_description_raw = raw_item.get("guidelines")
+
+        normalized_items.append(
+            {
+                "asset_spec_id": asset_spec_id,
+                "parameter_grouping": parameter_grouping,
+                "parameter_name": parameter_name,
+                "parameter_description": _strip_optional(
+                    None if parameter_description_raw is None else str(parameter_description_raw)
+                ),
+                "parameter_value": parameter_value,
+            }
+        )
+
+    return normalized_items or None
 
 
 def _format_allowed_codes(codes: set[str]) -> str:
@@ -251,6 +290,78 @@ async def _validate_supplier_id(db: AsyncSession, supplier_id: uuid.UUID | None)
         raise ServiceValidationError("supplier_id references an unknown supplier")
 
 
+async def _get_active_asset_specs_for_sub_category(
+    db: AsyncSession,
+    asset_sub_category_code: str,
+) -> list[AssetSpec]:
+    lookup_values = await _get_active_lookup_values(
+        db,
+        ASSET_SUB_CATEGORY_LOOKUP_KEY,
+        codes={asset_sub_category_code},
+    )
+    sub_category = lookup_values.get(asset_sub_category_code)
+    if sub_category is None:
+        raise ServiceValidationError("asset_sub_category references an unknown or inactive lookup value")
+
+    stmt = (
+        select(AssetSpec)
+        .where(
+            AssetSpec.asset_sub_category_id == sub_category.id,
+            AssetSpec.is_active.is_(True),
+        )
+        .order_by(AssetSpec.parameter_grouping.asc(), AssetSpec.parameter_seq.asc())
+    )
+    result = await db.execute(stmt)
+    return result.scalars().all()
+
+
+async def _resolve_asset_spec_values(
+    db: AsyncSession,
+    *,
+    asset_sub_category_code: str,
+    submitted_values: list[AssetSpecValue] | list[dict[str, str | None]] | None,
+) -> list[dict[str, str | None]] | None:
+    specs = await _get_active_asset_specs_for_sub_category(db, asset_sub_category_code)
+    if not specs:
+        return None
+
+    overrides_by_id: dict[str, dict[str, str | None]] = {}
+    overrides_by_key: dict[tuple[str, str], dict[str, str | None]] = {}
+    for raw_item in submitted_values or []:
+        item = raw_item.model_dump() if isinstance(raw_item, AssetSpecValue) else raw_item
+        asset_spec_id = _strip_optional(str(item.get("asset_spec_id") or ""))
+        if asset_spec_id:
+            overrides_by_id[asset_spec_id] = item
+
+        grouping = _strip_optional(str(item.get("parameter_grouping") or ""))
+        name = _strip_optional(str(item.get("parameter_name") or ""))
+        if grouping and name:
+            overrides_by_key[(grouping.lower(), name.lower())] = item
+
+    resolved_values: list[dict[str, str | None]] = []
+    for spec in specs:
+        override = overrides_by_id.get(str(spec.asset_spec_id)) or overrides_by_key.get(
+            (spec.parameter_grouping.lower(), spec.parameter_name.lower())
+        )
+        parameter_value = spec.parameter_value
+        if override is not None:
+            override_value = override.get("parameter_value")
+            if override_value is not None:
+                parameter_value = _normalize_required(str(override_value), "asset_spec_values.parameter_value", 150)
+
+        resolved_values.append(
+            {
+                "asset_spec_id": str(spec.asset_spec_id),
+                "parameter_grouping": spec.parameter_grouping,
+                "parameter_name": spec.parameter_name,
+                "parameter_description": spec.guidelines,
+                "parameter_value": parameter_value,
+            }
+        )
+
+    return resolved_values
+
+
 async def _get_asset_class_upgrade_support_map(
     db: AsyncSession,
     class_codes: set[str],
@@ -311,6 +422,7 @@ def _build_asset_response(asset: Asset, *, asset_class_upgrade_supported: bool) 
         asset_currency=asset.asset_currency,
         asset_release_url=asset.asset_release_url,
         asset_status=asset.asset_status,
+        asset_spec_values=_normalize_asset_spec_values_for_response(asset.asset_spec_values),
         can_create_release=asset_class_upgrade_supported,
         asset_class_upgrade_supported=asset_class_upgrade_supported,
         created_by=asset.created_by,
@@ -393,6 +505,60 @@ async def create_asset(db: AsyncSession, payload: AssetCreate) -> AssetResponse:
         if duplicate is not None:
             raise ServiceConflictError("serial_number already exists")
 
+    asset_class = await _normalize_lookup_code(
+        db,
+        lookup_key=ASSET_CLASS_LOOKUP_KEY,
+        value=payload.asset_class,
+        field_name="asset_class",
+    )
+    asset_category = await _normalize_lookup_code(
+        db,
+        lookup_key=ASSET_CATEGORY_LOOKUP_KEY,
+        value=payload.asset_category,
+        field_name="asset_category",
+    )
+    asset_sub_category = await _normalize_lookup_code(
+        db,
+        lookup_key=ASSET_SUB_CATEGORY_LOOKUP_KEY,
+        value=payload.asset_sub_category,
+        field_name="asset_sub_category",
+    )
+    asset_type = await _normalize_optional_lookup_code(
+        db,
+        lookup_key=ASSET_TYPE_LOOKUP_KEY,
+        value=payload.asset_type,
+        field_name="asset_type",
+    )
+    criticality_class = await _normalize_lookup_code_with_fallback(
+        db,
+        lookup_keys=(CRITICALITY_CLASS_LOOKUP_KEY, LEGACY_CRITICALITY_LOOKUP_KEY),
+        value=payload.criticality_class,
+        field_name="criticality_class",
+    )
+    asset_nature = await _normalize_lookup_code(
+        db,
+        lookup_key=ASSET_NATURE_LOOKUP_KEY,
+        value=payload.asset_nature,
+        field_name="asset_nature",
+    )
+    asset_currency = await _normalize_optional_lookup_code(
+        db,
+        lookup_key=CURRENCY_LOOKUP_KEY,
+        value=payload.asset_currency,
+        field_name="asset_currency",
+    )
+    asset_status = await _normalize_optional_lookup_code(
+        db,
+        lookup_key=ASSET_STATUS_LOOKUP_KEY,
+        value=payload.asset_status,
+        field_name="asset_status",
+    )
+    asset_spec_values = await _resolve_asset_spec_values(
+        db,
+        asset_sub_category_code=asset_sub_category,
+        submitted_values=payload.asset_spec_values,
+    )
+
     now = datetime.now(UTC)
     created_by = _normalize_required(payload.created_by, "created_by", 150)
     asset = Asset(
@@ -402,42 +568,12 @@ async def create_asset(db: AsyncSession, payload: AssetCreate) -> AssetResponse:
         qr_barcode=_normalize_optional_string(payload.qr_barcode, "qr_barcode", 50),
         rfid_tag=_normalize_optional_string(payload.rfid_tag, "rfid_tag", 30),
         serial_number=serial_number,
-        asset_class=await _normalize_lookup_code(
-            db,
-            lookup_key=ASSET_CLASS_LOOKUP_KEY,
-            value=payload.asset_class,
-            field_name="asset_class",
-        ),
-        asset_category=await _normalize_lookup_code(
-            db,
-            lookup_key=ASSET_CATEGORY_LOOKUP_KEY,
-            value=payload.asset_category,
-            field_name="asset_category",
-        ),
-        asset_sub_category=await _normalize_lookup_code(
-            db,
-            lookup_key=ASSET_SUB_CATEGORY_LOOKUP_KEY,
-            value=payload.asset_sub_category,
-            field_name="asset_sub_category",
-        ),
-        asset_type=await _normalize_optional_lookup_code(
-            db,
-            lookup_key=ASSET_TYPE_LOOKUP_KEY,
-            value=payload.asset_type,
-            field_name="asset_type",
-        ),
-        criticality_class=await _normalize_lookup_code_with_fallback(
-            db,
-            lookup_keys=(CRITICALITY_CLASS_LOOKUP_KEY, LEGACY_CRITICALITY_LOOKUP_KEY),
-            value=payload.criticality_class,
-            field_name="criticality_class",
-        ),
-        asset_nature=await _normalize_lookup_code(
-            db,
-            lookup_key=ASSET_NATURE_LOOKUP_KEY,
-            value=payload.asset_nature,
-            field_name="asset_nature",
-        ),
+        asset_class=asset_class,
+        asset_category=asset_category,
+        asset_sub_category=asset_sub_category,
+        asset_type=asset_type,
+        criticality_class=criticality_class,
+        asset_nature=asset_nature,
         tags=_normalize_tags(payload.tags),
         asset_name=_normalize_required(payload.asset_name, "asset_name", 100),
         asset_description=_normalize_required(payload.asset_description, "asset_description", 500),
@@ -453,19 +589,10 @@ async def create_asset(db: AsyncSession, payload: AssetCreate) -> AssetResponse:
         asset_purchase_ref=_normalize_optional_string(payload.asset_purchase_ref, "asset_purchase_ref", 50),
         warranty_period=payload.warranty_period,
         asset_value=payload.asset_value,
-        asset_currency=await _normalize_optional_lookup_code(
-            db,
-            lookup_key=CURRENCY_LOOKUP_KEY,
-            value=payload.asset_currency,
-            field_name="asset_currency",
-        ),
+        asset_currency=asset_currency,
         asset_release_url=_normalize_optional_string(payload.asset_release_url, "asset_release_url", 250),
-        asset_status=await _normalize_optional_lookup_code(
-            db,
-            lookup_key=ASSET_STATUS_LOOKUP_KEY,
-            value=payload.asset_status,
-            field_name="asset_status",
-        ),
+        asset_status=asset_status,
+        asset_spec_values=asset_spec_values,
         created_by=created_by,
         created_dt=now,
         modified_by=created_by,
@@ -647,6 +774,13 @@ async def update_asset(db: AsyncSession, asset_id: uuid.UUID, payload: AssetUpda
             lookup_key=ASSET_STATUS_LOOKUP_KEY,
             value=updates["asset_status"],
             field_name="asset_status",
+        )
+
+    if "asset_sub_category" in updates or "asset_spec_values" in updates:
+        asset.asset_spec_values = await _resolve_asset_spec_values(
+            db,
+            asset_sub_category_code=asset.asset_sub_category,
+            submitted_values=updates.get("asset_spec_values"),
         )
 
     if "modified_by" in updates:

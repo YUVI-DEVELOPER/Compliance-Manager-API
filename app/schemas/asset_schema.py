@@ -15,6 +15,14 @@ def _normalize_tags_input(value: object) -> object:
     return value
 
 
+class AssetSpecValue(BaseModel):
+    asset_spec_id: str
+    parameter_grouping: str
+    parameter_name: str
+    parameter_description: str | None = None
+    parameter_value: str
+
+
 class AssetCreate(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
@@ -62,6 +70,7 @@ class AssetCreate(BaseModel):
     asset_currency: str | None = Field(default=None, max_length=10)
     asset_release_url: str | None = Field(default=None, max_length=250)
     asset_status: str | None = Field(default=None, max_length=50)
+    asset_spec_values: list[AssetSpecValue] | None = None
 
     @field_validator("tags", mode="before")
     @classmethod
@@ -115,6 +124,7 @@ class AssetUpdate(BaseModel):
     asset_currency: str | None = Field(default=None, max_length=10)
     asset_release_url: str | None = Field(default=None, max_length=250)
     asset_status: str | None = Field(default=None, max_length=50)
+    asset_spec_values: list[AssetSpecValue] | None = None
 
     modified_by: str | None = Field(default=None, max_length=150)
 
@@ -164,6 +174,7 @@ class AssetResponse(BaseModel):
     asset_currency: str | None = None
     asset_release_url: str | None = None
     asset_status: str | None = None
+    asset_spec_values: list[AssetSpecValue] | None = None
 
     can_create_release: bool
     asset_class_upgrade_supported: bool

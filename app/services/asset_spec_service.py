@@ -151,6 +151,34 @@ async def get_asset_specs(
     return [_build_response(row) for row in rows]
 
 
+async def _get_active_sub_category_by_code(db: AsyncSession, asset_sub_category_code: str) -> LookupValue | None:
+    normalized_code = asset_sub_category_code.strip().upper()
+    stmt = (
+        select(LookupValue)
+        .join(LookupMaster, LookupValue.lookup_id == LookupMaster.id)
+        .where(
+            LookupMaster.lookup_key == ASSET_SUB_CATEGORY_LOOKUP_KEY,
+            LookupMaster.is_active.is_(True),
+            LookupValue.is_active.is_(True),
+            LookupValue.code == normalized_code,
+        )
+    )
+    result = await db.execute(stmt)
+    return result.scalars().first()
+
+
+async def get_asset_specs_by_sub_category_code(
+    db: AsyncSession,
+    asset_sub_category_code: str,
+    *,
+    include_inactive: bool = False,
+) -> list[AssetSpecResponse]:
+    sub_category = await _get_active_sub_category_by_code(db, asset_sub_category_code)
+    if sub_category is None:
+        raise ServiceValidationError("asset_sub_category_code references an unknown or inactive asset sub-category")
+    return await get_asset_specs(db, asset_sub_category_id=sub_category.id, include_inactive=include_inactive)
+
+
 async def get_asset_spec_by_id(db: AsyncSession, asset_spec_id: uuid.UUID) -> AssetSpecResponse:
     spec = await _get_spec_by_id(db, asset_spec_id)
     if spec is None:
