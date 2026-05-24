@@ -6,12 +6,14 @@ from datetime import UTC, datetime
 from fastapi import HTTPException, Request, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core import audit_actions
 from app.core.security import create_access_token, hash_password, verify_password
 from app.models.app_user import AppUser
 from app.models.login_audit_log import LoginAuditLog
 from app.schemas.auth_schema import AuthUserProfile, ChangePasswordRequest, CurrentUser, LoginRequest, LoginSuccessResponse
 from app.schemas.app_user_schema import UserLoginRequest
 from app.services.app_user_service import get_user_by_email, get_user_by_id
+from app.services.audit_log_service import create_audit_log
 from app.services.rbac_service import get_user_role_permission_profile, record_audit_event
 
 
@@ -88,6 +90,18 @@ async def login(
 
     if user is None:
         await _write_login_audit(db, user_id=None, email=email, login_status="FAILED", request=request, failure_reason="INVALID_CREDENTIALS")
+        await create_audit_log(
+            db,
+            request=request,
+            module_name="Authentication",
+            entity_name="User Session",
+            table_name="login_audit_log",
+            action=audit_actions.LOGIN_FAILED,
+            event_description="Login failed",
+            new_data={"email": email, "failure_reason": "INVALID_CREDENTIALS"},
+            status="FAILED",
+            reason="INVALID_CREDENTIALS",
+        )
         await db.commit()
         raise invalid_error
 
@@ -102,16 +116,58 @@ async def login(
             request=request,
             failure_reason="INVALID_CREDENTIALS",
         )
+        await create_audit_log(
+            db,
+            request=request,
+            current_user=user.id,
+            module_name="Authentication",
+            entity_name="User Session",
+            table_name="login_audit_log",
+            record_id=user.id,
+            action=audit_actions.LOGIN_FAILED,
+            event_description="Login failed",
+            new_data={"email": email, "failure_reason": "INVALID_CREDENTIALS"},
+            status="FAILED",
+            reason="INVALID_CREDENTIALS",
+        )
         await db.commit()
         raise invalid_error
 
     if not user.is_active:
         await _write_login_audit(db, user_id=user.id, email=email, login_status="FAILED", request=request, failure_reason="INACTIVE_ACCOUNT")
+        await create_audit_log(
+            db,
+            request=request,
+            current_user=user.id,
+            module_name="Authentication",
+            entity_name="User Session",
+            table_name="login_audit_log",
+            record_id=user.id,
+            action=audit_actions.LOGIN_FAILED,
+            event_description="Login failed for inactive account",
+            new_data={"email": email, "failure_reason": "INACTIVE_ACCOUNT"},
+            status="FAILED",
+            reason="INACTIVE_ACCOUNT",
+        )
         await db.commit()
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="User account is inactive")
 
     if user.is_locked:
         await _write_login_audit(db, user_id=user.id, email=email, login_status="FAILED", request=request, failure_reason="LOCKED_ACCOUNT")
+        await create_audit_log(
+            db,
+            request=request,
+            current_user=user.id,
+            module_name="Authentication",
+            entity_name="User Session",
+            table_name="login_audit_log",
+            record_id=user.id,
+            action=audit_actions.LOGIN_FAILED,
+            event_description="Login failed for locked account",
+            new_data={"email": email, "failure_reason": "LOCKED_ACCOUNT"},
+            status="FAILED",
+            reason="LOCKED_ACCOUNT",
+        )
         await db.commit()
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="User account is locked")
 
@@ -128,6 +184,24 @@ async def login(
         permissions=profile.permissions,
     )
     await _write_login_audit(db, user_id=user.id, email=email, login_status="SUCCESS", request=request)
+    await create_audit_log(
+        db,
+        request=request,
+        current_user=CurrentUser(
+            id=profile.id,
+            full_name=profile.full_name,
+            email=profile.email,
+            roles=profile.roles,
+            permissions=profile.permissions,
+        ),
+        module_name="Authentication",
+        entity_name="User Session",
+        table_name="login_audit_log",
+        record_id=user.id,
+        action=audit_actions.LOGIN_SUCCESS,
+        event_description="Login successful",
+        new_data={"email": user.email},
+    )
     await db.commit()
     return LoginSuccessResponse(access_token=token, expires_in=expires_in, user=profile)
 
@@ -146,6 +220,18 @@ async def logout(
         login_status="LOGOUT",
         request=request,
         logout_time=now,
+    )
+    await create_audit_log(
+        db,
+        request=request,
+        current_user=current_user,
+        module_name="Authentication",
+        entity_name="User Session",
+        table_name="login_audit_log",
+        record_id=current_user.id,
+        action=audit_actions.LOGOUT,
+        event_description="Logout successful",
+        new_data={"email": str(current_user.email), "logout_time": now.isoformat()},
     )
     await db.commit()
 

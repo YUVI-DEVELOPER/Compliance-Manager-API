@@ -1,8 +1,9 @@
 import uuid
 
-from fastapi import APIRouter, Depends, Query, status
+from fastapi import APIRouter, Depends, Query, Request, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core import audit_actions
 from app.core.auth_dependencies import require_permission
 from app.core.database import get_db
 from app.schemas.auth_schema import CurrentUser
@@ -17,6 +18,7 @@ from app.services.org_service import (
     search_org,
     update_org,
 )
+from app.services.audit_log_service import create_audit_log
 
 router = APIRouter(prefix="/org", tags=["org"])
 
@@ -104,10 +106,24 @@ async def org_role_assignment_create(
 @router.post("", response_model=ApiResponse, status_code=status.HTTP_201_CREATED)
 async def org_create(
     payload: OrgCreateRequest,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("ORGANIZATION_CREATE")),
     db: AsyncSession = Depends(get_db),
 ) -> dict[str, object]:
     data = await create_org(db, payload)
+    await create_audit_log(
+        db,
+        request=request,
+        current_user=current_user,
+        module_name="Organization",
+        entity_name="Organization",
+        table_name="org_structure",
+        record_id=data.id,
+        action=audit_actions.ORGANIZATION_CREATED,
+        event_description="Organization created",
+        new_data=data.model_dump(mode="json"),
+    )
+    await db.commit()
     return {
         "success": True,
         "message": "Org node created successfully",
@@ -119,10 +135,26 @@ async def org_create(
 async def org_update(
     org_id: uuid.UUID,
     payload: OrgUpdateRequest,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("ORGANIZATION_UPDATE")),
     db: AsyncSession = Depends(get_db),
 ) -> dict[str, object]:
+    old_data = (await get_org_by_id(db, org_id)).model_dump(mode="json")
     data = await update_org(db, org_id, payload)
+    await create_audit_log(
+        db,
+        request=request,
+        current_user=current_user,
+        module_name="Organization",
+        entity_name="Organization",
+        table_name="org_structure",
+        record_id=org_id,
+        action=audit_actions.ORGANIZATION_UPDATED,
+        event_description="Organization updated",
+        old_data=old_data,
+        new_data=data.model_dump(mode="json"),
+    )
+    await db.commit()
     return {
         "success": True,
         "message": "Org node updated successfully",
@@ -133,11 +165,27 @@ async def org_update(
 @router.delete("/{org_id}", response_model=ApiResponse)
 async def org_delete(
     org_id: uuid.UUID,
+    request: Request,
     deleted_by: uuid.UUID | None = Query(default=None),
     current_user: CurrentUser = Depends(require_permission("ORGANIZATION_DELETE")),
     db: AsyncSession = Depends(get_db),
 ) -> dict[str, object]:
+    old_data = (await get_org_by_id(db, org_id)).model_dump(mode="json")
     await delete_org(db, org_id, deleted_by)
+    await create_audit_log(
+        db,
+        request=request,
+        current_user=current_user,
+        module_name="Organization",
+        entity_name="Organization",
+        table_name="org_structure",
+        record_id=org_id,
+        action=audit_actions.ORGANIZATION_DEACTIVATED,
+        event_description="Organization deleted/deactivated",
+        old_data=old_data,
+        new_data={"deleted": True, "id": str(org_id)},
+    )
+    await db.commit()
     return {
         "success": True,
         "message": "Org node deleted successfully",

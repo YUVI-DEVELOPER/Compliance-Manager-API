@@ -1,14 +1,16 @@
 import uuid
 from typing import Literal
 
-from fastapi import APIRouter, Depends, Query, status
+from fastapi import APIRouter, Depends, Query, Request, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core import audit_actions
 from app.core.auth_dependencies import require_permission
 from app.core.database import get_db
 from app.schemas.auth_schema import CurrentUser
 from app.schemas.asset_schema import ApiResponse, AssetCreate, AssetUpdate
 from app.services.asset_report_service import get_asset_inventory_report
+from app.services.audit_log_service import create_audit_log
 from app.services.asset_service import (
     create_asset,
     delete_asset,
@@ -52,6 +54,7 @@ async def asset_search(
 
 @router.get("/report/inventory", response_model=ApiResponse)
 async def asset_inventory_report(
+    request: Request,
     scope: Literal["enterprise", "unit"] = Query(default="enterprise"),
     org_id: uuid.UUID | None = Query(default=None, description="Organization scope identifier for unit reporting"),
     q: str | None = Query(default=None, description="Search across identifiers, names, owners, organization, or supplier"),
@@ -70,6 +73,25 @@ async def asset_inventory_report(
         asset_class=asset_class,
         asset_category=asset_category,
     )
+    await create_audit_log(
+        db,
+        request=request,
+        current_user=current_user,
+        module_name="Reports/Export",
+        entity_name="Asset Inventory Report",
+        table_name="asset_basic_info",
+        action=audit_actions.REPORT_EXPORTED,
+        event_description="Asset inventory report exported/retrieved",
+        new_data={
+            "scope": scope,
+            "org_id": str(org_id) if org_id is not None else None,
+            "q": q,
+            "lifecycle_state": lifecycle_state,
+            "asset_class": asset_class,
+            "asset_category": asset_category,
+        },
+    )
+    await db.commit()
     return {
         "success": True,
         "message": "Asset inventory report fetched successfully",
@@ -94,10 +116,11 @@ async def asset_detail(
 @router.post("", response_model=ApiResponse, status_code=status.HTTP_201_CREATED)
 async def asset_create(
     payload: AssetCreate,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("ASSET_CREATE")),
     db: AsyncSession = Depends(get_db),
 ) -> dict[str, object]:
-    data = await create_asset(db, payload)
+    data = await create_asset(db, payload, request=request, current_user=current_user)
     return {
         "success": True,
         "message": "Asset created successfully",
@@ -109,10 +132,11 @@ async def asset_create(
 async def asset_update(
     asset_id: uuid.UUID,
     payload: AssetUpdate,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("ASSET_UPDATE")),
     db: AsyncSession = Depends(get_db),
 ) -> dict[str, object]:
-    data = await update_asset(db, asset_id, payload)
+    data = await update_asset(db, asset_id, payload, request=request, current_user=current_user)
     return {
         "success": True,
         "message": "Asset updated successfully",
@@ -123,10 +147,11 @@ async def asset_update(
 @router.delete("/{asset_id}", response_model=ApiResponse)
 async def asset_delete(
     asset_id: uuid.UUID,
+    request: Request,
     current_user: CurrentUser = Depends(require_permission("ASSET_DELETE")),
     db: AsyncSession = Depends(get_db),
 ) -> dict[str, object]:
-    await delete_asset(db, asset_id)
+    await delete_asset(db, asset_id, request=request, current_user=current_user)
     return {
         "success": True,
         "message": "Asset deleted successfully",
