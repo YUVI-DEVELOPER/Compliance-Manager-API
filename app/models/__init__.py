@@ -26,6 +26,11 @@ from app.models.org_role import OrgRole
 from app.models.org_role_action import OrgRoleAction
 from app.models.org_structure import OrgStructure
 from app.models.release_impact_assessment import ReleaseImpactAssessment
+from app.models.release_validation_ai_suggestion import ReleaseValidationAISuggestion
+from app.models.release_validation_document_requirement import ReleaseValidationDocumentRequirement
+from app.models.release_validation_impact_assessment import ReleaseValidationImpactAssessment
+from app.models.release_validation_impact_response import ReleaseValidationImpactResponse
+from app.models.release_validation_package import ReleaseValidationPackage
 from app.models.supplier import Supplier
 from app.models.supplier_comparison_summary import SupplierComparisonSummary
 from app.models.supplier_evaluation_analysis import SupplierEvaluationAnalysis
@@ -75,6 +80,11 @@ __all__ = [
     "OrgRoleAction",
     "OrgStructure",
     "ReleaseImpactAssessment",
+    "ReleaseValidationAISuggestion",
+    "ReleaseValidationDocumentRequirement",
+    "ReleaseValidationImpactAssessment",
+    "ReleaseValidationImpactResponse",
+    "ReleaseValidationPackage",
     "Supplier",
     "SupplierComparisonSummary",
     "SupplierEvaluationAnalysis",

@@ -12,6 +12,8 @@ if TYPE_CHECKING:
     from app.models.asset import Asset
     from app.models.authored_document import AuthoredDocument
     from app.models.release_impact_assessment import ReleaseImpactAssessment
+    from app.models.release_validation_document_requirement import ReleaseValidationDocumentRequirement
+    from app.models.release_validation_package import ReleaseValidationPackage
     from app.models.supplier_qualification_document import SupplierQualificationDocument
     from app.models.validated_document_link import ValidatedDocumentLink
 
@@ -55,6 +57,17 @@ class AssetRelease(Base):
         nullable=False,
     )
     version: Mapped[str] = mapped_column(String(50), nullable=False)
+    release_name: Mapped[str | None] = mapped_column(String(200), nullable=True)
+    previous_version: Mapped[str | None] = mapped_column(String(50), nullable=True)
+    release_type: Mapped[str | None] = mapped_column(String(40), nullable=True)
+    vendor_name: Mapped[str | None] = mapped_column(String(150), nullable=True)
+    planned_implementation_date: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    environment: Mapped[str | None] = mapped_column(String(30), nullable=True)
+    release_description: Mapped[str | None] = mapped_column(Text, nullable=True)
+    business_reason: Mapped[str | None] = mapped_column(Text, nullable=True)
+    change_control_no: Mapped[str | None] = mapped_column(String(100), nullable=True)
+    expected_validated_functionality_impact: Mapped[str | None] = mapped_column(String(20), nullable=True)
+    release_status: Mapped[str | None] = mapped_column(String(50), nullable=True)
     system_config_report: Mapped[str | None] = mapped_column(Text, nullable=True)
     documentation_mode: Mapped[str] = mapped_column(String(20), nullable=False)
     documentation_text: Mapped[str | None] = mapped_column(Text, nullable=True)
@@ -89,6 +102,19 @@ class AssetRelease(Base):
         "ReleaseImpactAssessment",
         back_populates="release",
         foreign_keys="ReleaseImpactAssessment.release_id",
+        cascade="all, delete-orphan",
+        passive_deletes=True,
+    )
+    validation_package: Mapped["ReleaseValidationPackage | None"] = relationship(
+        "ReleaseValidationPackage",
+        back_populates="release",
+        cascade="all, delete-orphan",
+        passive_deletes=True,
+        uselist=False,
+    )
+    document_requirements: Mapped[list["ReleaseValidationDocumentRequirement"]] = relationship(
+        "ReleaseValidationDocumentRequirement",
+        back_populates="release",
         cascade="all, delete-orphan",
         passive_deletes=True,
     )

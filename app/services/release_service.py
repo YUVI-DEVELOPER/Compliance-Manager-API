@@ -7,24 +7,39 @@ from urllib.parse import urlparse
 
 import httpx
 from fastapi import HTTPException, status
-from sqlalchemy import Select, select
+from sqlalchemy import Select, select, text
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.models.asset import Asset
 from app.models.asset_release import AssetRelease
+from app.models.release_validation_package import ReleaseValidationPackage
 from app.schemas.release_schema import (
+    ALLOWED_EXPECTED_VALIDATED_FUNCTIONALITY_IMPACTS,
+    ALLOWED_RELEASE_ENVIRONMENTS,
+    ALLOWED_RELEASE_TYPES,
     DOCUMENTATION_MODE_MANUAL,
     DOCUMENTATION_MODE_ONLINE_FETCH,
     ReleaseCreate,
+    ReleaseCreateResult,
     ReleaseResponse,
     ReleaseUpdate,
+    RELEASE_STATUS_IMPACT_ASSESSMENT_PENDING,
 )
+from app.schemas.release_validation_package_schema import ReleaseValidationPackageResponse
 from app.services.asset_service import is_asset_class_upgrade_supported
 
 DOCUMENTATION_FETCH_TIMEOUT_SECONDS = 20.0
 MAX_FETCHED_DOCUMENT_SIZE = 2_000_000
+PACKAGE_STATUS_DRAFT = "DRAFT"
+VALIDATION_SCOPE_NOT_ASSESSED = "NOT_ASSESSED"
+RISK_LEVEL_NOT_ASSESSED = "NOT_ASSESSED"
+IMPACT_ASSESSMENT_STATUS_PENDING = "PENDING"
+DOCUMENT_CHECKLIST_STATUS_NOT_GENERATED = "NOT_GENERATED"
+TESTING_STATUS_NOT_STARTED = "NOT_STARTED"
+APPROVAL_STATUS_NOT_STARTED = "NOT_STARTED"
+NEXT_STEP_IMPACT_ASSESSMENT = "IMPACT_ASSESSMENT"
 
 
 class ServiceValidationError(HTTPException):
@@ -123,6 +138,20 @@ def _normalize_required_text(value: str | None, field_name: str) -> str:
     return normalized
 
 
+def _normalize_allowed(value: str | None, field_name: str, allowed_values: set[str], max_len: int) -> str:
+    normalized = _normalize_required(value or "", field_name, max_len).upper()
+    if normalized not in allowed_values:
+        allowed = ", ".join(sorted(allowed_values))
+        raise ServiceValidationError(f"{field_name} must be one of: {allowed}")
+    return normalized
+
+
+def _normalize_required_datetime(value: datetime | None, field_name: str) -> datetime:
+    if value is None:
+        raise ServiceValidationError(f"{field_name} is required")
+    return value
+
+
 def _normalize_documentation_mode(value: str | None) -> str:
     normalized = _normalize_required_text(value, "documentation_mode").upper()
     if normalized not in {DOCUMENTATION_MODE_MANUAL, DOCUMENTATION_MODE_ONLINE_FETCH}:
@@ -165,8 +194,36 @@ def _validate_end_dt(end_dt: datetime | None, created_dt: datetime) -> None:
         raise ServiceValidationError("end_dt cannot be earlier than created_dt")
 
 
+def _normalize_release_create_details(payload: ReleaseCreate) -> dict[str, object]:
+    return {
+        "release_name": _normalize_required(payload.release_name, "release_name", 200),
+        "previous_version": _normalize_required(payload.previous_version, "previous_version", 50),
+        "version": _normalize_required(payload.version, "version", 50),
+        "release_type": _normalize_allowed(payload.release_type, "release_type", ALLOWED_RELEASE_TYPES, 40),
+        "vendor_name": _strip_optional(payload.vendor_name),
+        "planned_implementation_date": _normalize_required_datetime(
+            payload.planned_implementation_date,
+            "planned_implementation_date",
+        ),
+        "environment": _normalize_allowed(payload.environment, "environment", ALLOWED_RELEASE_ENVIRONMENTS, 30),
+        "release_description": _normalize_required_text(payload.release_description, "release_description"),
+        "business_reason": _normalize_required_text(payload.business_reason, "business_reason"),
+        "change_control_no": _strip_optional(payload.change_control_no),
+        "expected_validated_functionality_impact": _normalize_allowed(
+            payload.expected_validated_functionality_impact,
+            "expected_validated_functionality_impact",
+            ALLOWED_EXPECTED_VALIDATED_FUNCTIONALITY_IMPACTS,
+            20,
+        ),
+        "release_status": RELEASE_STATUS_IMPACT_ASSESSMENT_PENDING,
+    }
+
+
 def _release_query() -> Select[tuple[AssetRelease]]:
-    return select(AssetRelease).options(selectinload(AssetRelease.asset).selectinload(Asset.supplier))
+    return select(AssetRelease).options(
+        selectinload(AssetRelease.asset).selectinload(Asset.supplier),
+        selectinload(AssetRelease.validation_package),
+    )
 
 
 async def _get_asset_by_id(db: AsyncSession, asset_id: uuid.UUID) -> Asset | None:
@@ -194,6 +251,10 @@ def _conflict_message_from_integrity_error(exc: IntegrityError) -> str:
     message = str(getattr(exc, "orig", exc)).lower()
     if "uq_asset_release_asset_version" in message or "asset_id, version" in message:
         return "Release version already exists for this asset"
+    if "uq_release_validation_package_release" in message:
+        return "Validation package already exists for this release"
+    if "uq_release_validation_package_no" in message:
+        return "Validation package number already exists; retry release creation"
     if "chk_asset_release_end_dt" in message:
         return "end_dt cannot be earlier than created_dt"
     if "chk_asset_release_documentation_mode" in message:
@@ -203,6 +264,14 @@ def _conflict_message_from_integrity_error(exc: IntegrityError) -> str:
     return "Operation failed due to a data conflict"
 
 
+def _build_validation_package_response(
+    validation_package: ReleaseValidationPackage | None,
+) -> ReleaseValidationPackageResponse | None:
+    if validation_package is None:
+        return None
+    return ReleaseValidationPackageResponse.model_validate(validation_package)
+
+
 def _build_release_response(release: AssetRelease) -> ReleaseResponse:
     asset = release.asset
     supplier = asset.supplier if asset is not None else None
@@ -210,6 +279,17 @@ def _build_release_response(release: AssetRelease) -> ReleaseResponse:
         release_id=release.release_id,
         asset_id=release.asset_id,
         version=release.version,
+        release_name=release.release_name,
+        previous_version=release.previous_version,
+        release_type=release.release_type,
+        vendor_name=release.vendor_name,
+        planned_implementation_date=release.planned_implementation_date,
+        environment=release.environment,
+        release_description=release.release_description,
+        business_reason=release.business_reason,
+        change_control_no=release.change_control_no,
+        expected_validated_functionality_impact=release.expected_validated_functionality_impact,
+        release_status=release.release_status,
         system_config_report=release.system_config_report,
         documentation_mode=release.documentation_mode,
         documentation_text=release.documentation_text,
@@ -225,6 +305,7 @@ def _build_release_response(release: AssetRelease) -> ReleaseResponse:
         manufacturer=asset.manufacturer if asset is not None else None,
         model=asset.model if asset is not None else None,
         supplier_name=supplier.supplier_name if supplier is not None else None,
+        validation_package=_build_validation_package_response(release.validation_package),
     )
 
 
@@ -278,6 +359,30 @@ async def _fetch_documentation_from_source(source_url: str) -> tuple[str, dateti
         raise ServiceValidationError(f"Failed to fetch documentation from documentation_source_url: {exc}") from exc
 
     return _extract_documentation_text(response), datetime.now(UTC)
+
+
+async def _generate_validation_package_no(db: AsyncSession, reference_dt: datetime) -> str:
+    year = reference_dt.year
+    prefix = f"VAL-PKG-{year}-"
+    await db.execute(
+        text("SELECT pg_advisory_xact_lock(hashtext(:lock_name))"),
+        {"lock_name": f"release_validation_package:{year}"},
+    )
+    result = await db.execute(
+        text(
+            """
+            SELECT COALESCE(MAX(CAST(SUBSTRING(package_no FROM :pattern) AS INTEGER)), 0)
+            FROM public.release_validation_package
+            WHERE package_no LIKE :like_pattern
+            """
+        ),
+        {
+            "pattern": f"^{prefix}([0-9]+)$",
+            "like_pattern": f"{prefix}%",
+        },
+    )
+    latest_sequence = result.scalar_one_or_none() or 0
+    return f"{prefix}{int(latest_sequence) + 1:04d}"
 
 
 async def _resolve_documentation_on_create(payload: ReleaseCreate) -> tuple[str, str, str | None, datetime | None]:
@@ -349,7 +454,20 @@ async def get_release_by_id(db: AsyncSession, release_id: uuid.UUID) -> ReleaseR
     return _build_release_response(release)
 
 
-async def create_release(db: AsyncSession, asset_id: uuid.UUID, payload: ReleaseCreate) -> ReleaseResponse:
+async def get_validation_package_by_release(
+    db: AsyncSession,
+    release_id: uuid.UUID,
+) -> ReleaseValidationPackageResponse:
+    release = await _get_release_model_by_id(db, release_id)
+    if release is None:
+        raise ServiceNotFoundError("Release not found")
+    validation_package = _build_validation_package_response(release.validation_package)
+    if validation_package is None:
+        raise ServiceNotFoundError("Validation package not found for release")
+    return validation_package
+
+
+async def create_release(db: AsyncSession, asset_id: uuid.UUID, payload: ReleaseCreate) -> ReleaseCreateResult:
     asset = await _get_asset_by_id(db, asset_id)
     if asset is None:
         raise ServiceNotFoundError("Asset not found")
@@ -358,7 +476,8 @@ async def create_release(db: AsyncSession, asset_id: uuid.UUID, payload: Release
             "Releases can only be created for assets whose asset class is marked as upgrade-supported"
         )
 
-    version = _normalize_required(payload.version, "version", 50)
+    release_details = _normalize_release_create_details(payload)
+    version = str(release_details["version"])
     created_by = _strip_optional(payload.created_by)
     documentation_mode, documentation_text, documentation_source_url, documentation_fetched_at = (
         await _resolve_documentation_on_create(payload)
@@ -373,6 +492,17 @@ async def create_release(db: AsyncSession, asset_id: uuid.UUID, payload: Release
     release = AssetRelease(
         asset_id=asset_id,
         version=version,
+        release_name=release_details["release_name"],
+        previous_version=release_details["previous_version"],
+        release_type=release_details["release_type"],
+        vendor_name=release_details["vendor_name"],
+        planned_implementation_date=release_details["planned_implementation_date"],
+        environment=release_details["environment"],
+        release_description=release_details["release_description"],
+        business_reason=release_details["business_reason"],
+        change_control_no=release_details["change_control_no"],
+        expected_validated_functionality_impact=release_details["expected_validated_functionality_impact"],
+        release_status=RELEASE_STATUS_IMPACT_ASSESSMENT_PENDING,
         system_config_report=_strip_optional(payload.system_config_report),
         documentation_mode=documentation_mode,
         documentation_text=documentation_text,
@@ -388,9 +518,25 @@ async def create_release(db: AsyncSession, asset_id: uuid.UUID, payload: Release
 
     try:
         await db.flush()
-        from app.services.release_assessment_service import generate_impact_assessment_for_release
 
-        await generate_impact_assessment_for_release(db, release.release_id, created_by=created_by, commit=False)
+        package_no = await _generate_validation_package_no(db, now)
+        validation_package = ReleaseValidationPackage(
+            release_id=release.release_id,
+            package_no=package_no,
+            package_status=PACKAGE_STATUS_DRAFT,
+            validation_scope=VALIDATION_SCOPE_NOT_ASSESSED,
+            risk_level=RISK_LEVEL_NOT_ASSESSED,
+            impact_assessment_status=IMPACT_ASSESSMENT_STATUS_PENDING,
+            document_checklist_status=DOCUMENT_CHECKLIST_STATUS_NOT_GENERATED,
+            testing_status=TESTING_STATUS_NOT_STARTED,
+            approval_status=APPROVAL_STATUS_NOT_STARTED,
+            created_by=created_by,
+            created_dt=now,
+            modified_by=created_by,
+            modified_dt=now,
+        )
+        db.add(validation_package)
+        await db.flush()
         await db.commit()
     except IntegrityError as exc:
         await db.rollback()
@@ -399,7 +545,14 @@ async def create_release(db: AsyncSession, asset_id: uuid.UUID, payload: Release
         await db.rollback()
         raise
 
-    return await get_release_by_id(db, release.release_id)
+    created_release = await get_release_by_id(db, release.release_id)
+    if created_release.validation_package is None:
+        raise ServiceConflictError("Validation package initialization failed")
+    return ReleaseCreateResult(
+        release=created_release,
+        validation_package=created_release.validation_package,
+        nextStep=NEXT_STEP_IMPACT_ASSESSMENT,
+    )
 
 
 async def update_release(db: AsyncSession, release_id: uuid.UUID, payload: ReleaseUpdate) -> ReleaseResponse:
@@ -411,6 +564,50 @@ async def update_release(db: AsyncSession, release_id: uuid.UUID, payload: Relea
 
     if "version" in updates and updates["version"] is None:
         raise ServiceValidationError("version cannot be null")
+
+    required_text_updates = {
+        "release_name": ("release_name", 200),
+        "previous_version": ("previous_version", 50),
+        "release_description": ("release_description", None),
+        "business_reason": ("business_reason", None),
+    }
+    for field_name, (error_name, max_len) in required_text_updates.items():
+        if field_name in updates:
+            if updates[field_name] is None:
+                raise ServiceValidationError(f"{error_name} cannot be null")
+            if max_len is None:
+                setattr(release, field_name, _normalize_required_text(str(updates[field_name]), error_name))
+            else:
+                setattr(release, field_name, _normalize_required(str(updates[field_name]), error_name, max_len))
+
+    if "release_type" in updates:
+        release.release_type = _normalize_allowed(updates["release_type"], "release_type", ALLOWED_RELEASE_TYPES, 40)
+
+    if "environment" in updates:
+        release.environment = _normalize_allowed(updates["environment"], "environment", ALLOWED_RELEASE_ENVIRONMENTS, 30)
+
+    if "expected_validated_functionality_impact" in updates:
+        release.expected_validated_functionality_impact = _normalize_allowed(
+            updates["expected_validated_functionality_impact"],
+            "expected_validated_functionality_impact",
+            ALLOWED_EXPECTED_VALIDATED_FUNCTIONALITY_IMPACTS,
+            20,
+        )
+
+    if "planned_implementation_date" in updates:
+        release.planned_implementation_date = _normalize_required_datetime(
+            updates["planned_implementation_date"],
+            "planned_implementation_date",
+        )
+
+    if "vendor_name" in updates:
+        release.vendor_name = _strip_optional(updates["vendor_name"])
+
+    if "change_control_no" in updates:
+        release.change_control_no = _strip_optional(updates["change_control_no"])
+
+    if "release_status" in updates:
+        release.release_status = _normalize_required(str(updates["release_status"]), "release_status", 50)
 
     if "version" in updates and updates["version"] is not None:
         version = _normalize_required(str(updates["version"]), "version", 50)
